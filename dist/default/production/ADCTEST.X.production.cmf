@@ -1,0 +1,772 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/ADCTEST.X.production.o
+cinit CODE 0 7F6 7F6 A 2
+text1 CODE 0 4C1 4C1 16 2
+text2 CODE 0 512 512 27 2
+text3 CODE 0 673 673 67 2
+text4 CODE 0 565 565 33 2
+text5 CODE 0 5CC 5CC 52 2
+text6 CODE 0 61E 61E 55 2
+text7 CODE 0 3D0 3D0 7 2
+text8 CODE 0 3CC 3CC 4 2
+text9 CODE 0 4D7 4D7 19 2
+text10 CODE 0 3DF 3DF B 2
+text11 CODE 0 3EA 3EA E 2
+text12 CODE 0 3C8 3C8 4 2
+text13 CODE 0 457 457 13 2
+text14 CODE 0 4F0 4F0 22 2
+text15 CODE 0 444 444 13 2
+text16 CODE 0 431 431 13 2
+text17 CODE 0 3C4 3C4 4 2
+text18 CODE 0 6DA 6DA 8A 2
+text19 CODE 0 41E 41E 13 2
+text20 CODE 0 40B 40B 13 2
+text21 CODE 0 4AB 4AB 16 2
+text22 CODE 0 539 539 2C 2
+text23 CODE 0 3C0 3C0 4 2
+text24 CODE 0 3BC 3BC 4 2
+text25 CODE 0 495 495 16 2
+text26 CODE 0 3F8 3F8 13 2
+text27 CODE 0 46A 46A 15 2
+text28 CODE 0 598 598 34 2
+text29 CODE 0 47F 47F 16 2
+text30 CODE 0 3B8 3B8 4 2
+text31 CODE 0 3B4 3B4 4 2
+maintext CODE 0 764 764 92 2
+cstackBANK0 BANK0 1 42 42 8 1
+bssBANK0 BANK0 1 20 20 22 1
+clrtext CODE 0 3D7 3D7 8 2
+$/tmp/xcXK4hyas.o
+end_init CODE 0 0 0 2 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 4A-7D 1
+RAM A0-FD 1
+BANK0 4A-7D 1
+BANK1 A0-FD 1
+CONST 2-3B3 2
+CONST 800-FFF 2
+ENTRY 2-3B3 2
+ENTRY 800-FFF 2
+IDLOC 2000-2003 2
+STACK A0-FD 1
+CODE 2-3B3 2
+CODE 800-FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-17D 1
+SFR3 180-1FD 1
+STRCODE 2-3B3 2
+STRCODE 800-FFF 2
+STRING 2-3B3 2
+STRING 800-FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/ADCTEST.X.production.o
+7F6 cinit CODE >295:/tmp/xcXmUIUZg
+7F6 cinit CODE >298:/tmp/xcXmUIUZg
+7F6 cinit CODE >348:/tmp/xcXmUIUZg
+7F7 cinit CODE >349:/tmp/xcXmUIUZg
+7F8 cinit CODE >350:/tmp/xcXmUIUZg
+7F9 cinit CODE >351:/tmp/xcXmUIUZg
+7FA cinit CODE >352:/tmp/xcXmUIUZg
+7FD cinit CODE >358:/tmp/xcXmUIUZg
+7FD cinit CODE >360:/tmp/xcXmUIUZg
+7FE cinit CODE >361:/tmp/xcXmUIUZg
+3B4 text31 CODE >268:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3B4 text31 CODE >271:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3B7 text31 CODE >274:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3B8 text30 CODE >396:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3B8 text30 CODE >400:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3BB text30 CODE >403:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+47F text29 CODE >348:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+47F text29 CODE >350:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+487 text29 CODE >351:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+488 text29 CODE >352:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+489 text29 CODE >353:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+48A text29 CODE >354:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+48D text29 CODE >355:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+494 text29 CODE >356:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+494 text29 CODE >358:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+598 text28 CODE >796:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+598 text28 CODE >798:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+599 text28 CODE >799:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+599 text28 CODE >803:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+59C text28 CODE >806:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+59F text28 CODE >807:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A0 text28 CODE >809:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A1 text28 CODE >810:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A1 text28 CODE >814:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A4 text28 CODE >820:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A7 text28 CODE >821:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A8 text28 CODE >826:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A9 text28 CODE >827:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5A9 text28 CODE >831:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5AC text28 CODE >834:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5AF text28 CODE >835:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B0 text28 CODE >837:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B1 text28 CODE >838:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B1 text28 CODE >841:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B2 text28 CODE >842:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B3 text28 CODE >844:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B4 text28 CODE >845:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B4 text28 CODE >846:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5B5 text28 CODE >847:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5CB text28 CODE >852:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+46A text27 CODE >420:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+46A text27 CODE >426:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+46D text27 CODE >427:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+47B text27 CODE >428:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+47E text27 CODE >431:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3F8 text26 CODE >441:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3F8 text26 CODE >446:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3FB text26 CODE >447:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+40A text26 CODE >450:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+495 text25 CODE >407:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+495 text25 CODE >412:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+498 text25 CODE >413:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4A7 text25 CODE >414:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4AA text25 CODE >417:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3BC text24 CODE >389:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3BC text24 CODE >392:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3BF text24 CODE >394:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C0 text23 CODE >378:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C0 text23 CODE >379:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C3 text23 CODE >380:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+539 text22 CODE >452:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+539 text22 CODE >453:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+53D text22 CODE >454:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+53E text22 CODE >456:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+53F text22 CODE >457:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+54E text22 CODE >458:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+551 text22 CODE >459:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+55A text22 CODE >454:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+55A text22 CODE >460:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+564 text22 CODE >461:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4AB text21 CODE >484:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4AB text21 CODE >486:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4AE text21 CODE >487:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4BD text21 CODE >488:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4C0 text21 CODE >490:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+40B text20 CODE >470:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+40B text20 CODE >471:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+40E text20 CODE >472:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+41D text20 CODE >473:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+41E text19 CODE >474:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+41E text19 CODE >475:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+421 text19 CODE >476:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+430 text19 CODE >477:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6DA text18 CODE >936:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6DA text18 CODE >937:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6DB text18 CODE >938:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6DB text18 CODE >940:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6DC text18 CODE >941:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E0 text18 CODE >942:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E2 text18 CODE >944:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E3 text18 CODE >946:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E3 text18 CODE >950:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E6 text18 CODE >951:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6E9 text18 CODE >952:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6EA text18 CODE >954:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6EA text18 CODE >956:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6F0 text18 CODE >958:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6F7 text18 CODE >959:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6FA text18 CODE >960:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6FD text18 CODE >961:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+700 text18 CODE >962:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+703 text18 CODE >963:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+706 text18 CODE >964:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+709 text18 CODE >965:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+70C text18 CODE >966:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+70F text18 CODE >967:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+712 text18 CODE >968:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+716 text18 CODE >970:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+716 text18 CODE >972:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+71F text18 CODE >973:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+722 text18 CODE >974:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+725 text18 CODE >975:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+728 text18 CODE >976:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+72B text18 CODE >977:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+72E text18 CODE >978:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+731 text18 CODE >979:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+734 text18 CODE >980:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+737 text18 CODE >981:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+73A text18 CODE >982:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+73D text18 CODE >983:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+73D text18 CODE >985:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+748 text18 CODE >987:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+74B text18 CODE >989:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+74F text18 CODE >991:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+74F text18 CODE >994:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+750 text18 CODE >996:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+763 text18 CODE >999:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C4 text17 CODE >371:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C4 text17 CODE >372:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C7 text17 CODE >373:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+431 text16 CODE >465:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+431 text16 CODE >466:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+434 text16 CODE >467:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+443 text16 CODE >468:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+444 text15 CODE >479:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+444 text15 CODE >480:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+447 text15 CODE >481:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+456 text15 CODE >482:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F0 text14 CODE >1002:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F0 text14 CODE >1003:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F3 text14 CODE >1004:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F4 text14 CODE >1005:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F5 text14 CODE >1006:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F6 text14 CODE >1007:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F7 text14 CODE >1008:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F8 text14 CODE >1009:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4F9 text14 CODE >1010:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FA text14 CODE >1012:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FB text14 CODE >1013:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FC text14 CODE >1014:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FD text14 CODE >1015:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FE text14 CODE >1016:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4FF text14 CODE >1017:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+500 text14 CODE >1018:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+501 text14 CODE >1019:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+503 text14 CODE >1020:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+505 text14 CODE >1021:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+507 text14 CODE >1022:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+509 text14 CODE >1023:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+50B text14 CODE >1024:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+50D text14 CODE >1025:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+50F text14 CODE >1026:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+511 text14 CODE >1028:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+457 text13 CODE >342:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+457 text13 CODE >343:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+45A text13 CODE >344:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+469 text13 CODE >346:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C8 text12 CODE >383:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3C8 text12 CODE >385:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3CB text12 CODE >387:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3EA text11 CODE >276:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3EA text11 CODE >278:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3ED text11 CODE >279:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3F7 text11 CODE >282:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3DF text10 CODE >301:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3DF text10 CODE >302:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3E9 text10 CODE >303:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4D7 text9 CODE >261:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4D7 text9 CODE >263:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4E5 text9 CODE >264:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4EF text9 CODE >265:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3CC text8 CODE >285:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3CC text8 CODE >288:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3CF text8 CODE >291:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3D0 text7 CODE >294:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3D0 text7 CODE >296:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3D6 text7 CODE >298:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+61E text6 CODE >306:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+61E text6 CODE >308:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+622 text6 CODE >311:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+623 text6 CODE >312:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+626 text6 CODE >314:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+62F text6 CODE >316:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+635 text6 CODE >317:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+639 text6 CODE >318:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+639 text6 CODE >320:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+63A text6 CODE >321:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+645 text6 CODE >320:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+645 text6 CODE >323:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+64C text6 CODE >326:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+65C text6 CODE >327:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+662 text6 CODE >328:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+666 text6 CODE >311:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+666 text6 CODE >329:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+672 text6 CODE >331:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5CC text5 CODE >774:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5CC text5 CODE >777:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5D7 text5 CODE >778:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5DB text5 CODE >779:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5DB text5 CODE >780:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5ED text5 CODE >781:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5F1 text5 CODE >782:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+5F1 text5 CODE >783:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+603 text5 CODE >784:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+606 text5 CODE >785:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+606 text5 CODE >786:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+618 text5 CODE >787:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+61D text5 CODE >788:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+61D text5 CODE >794:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+565 text4 CODE >916:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+565 text4 CODE >919:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+570 text4 CODE >920:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+573 text4 CODE >921:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+573 text4 CODE >924:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+585 text4 CODE >925:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+589 text4 CODE >926:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+589 text4 CODE >929:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+592 text4 CODE >930:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+597 text4 CODE >931:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+597 text4 CODE >935:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+673 text3 CODE >859:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+673 text3 CODE >861:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+679 text3 CODE >862:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+67D text3 CODE >864:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+686 text3 CODE >867:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+68D text3 CODE >869:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+695 text3 CODE >871:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+69F text3 CODE >872:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A3 text3 CODE >873:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A6 text3 CODE >874:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A7 text3 CODE >875:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A7 text3 CODE >877:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A8 text3 CODE >879:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6A8 text3 CODE >883:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6AA text3 CODE >884:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6AC text3 CODE >888:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6AD text3 CODE >889:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6AD text3 CODE >892:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6B4 text3 CODE >893:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6B7 text3 CODE >894:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6B8 text3 CODE >895:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6B8 text3 CODE >897:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6C0 text3 CODE >899:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D0 text3 CODE >900:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D4 text3 CODE >901:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D7 text3 CODE >902:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D8 text3 CODE >903:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D9 text3 CODE >905:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+6D9 text3 CODE >911:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+512 text2 CODE >333:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+512 text2 CODE >334:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+516 text2 CODE >336:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+517 text2 CODE >337:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+526 text2 CODE >338:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+52E text2 CODE >336:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+52E text2 CODE >339:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+538 text2 CODE >341:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4C1 text1 CODE >361:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4C1 text1 CODE >364:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4C4 text1 CODE >365:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4D3 text1 CODE >366:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+4D6 text1 CODE >369:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+764 maintext CODE >163:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+764 maintext CODE >170:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+767 maintext CODE >171:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+768 maintext CODE >174:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+76A maintext CODE >177:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+76B maintext CODE >178:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+76E maintext CODE >181:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+771 maintext CODE >184:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+775 maintext CODE >186:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+775 maintext CODE >190:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+778 maintext CODE >195:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+77B maintext CODE >199:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+77E maintext CODE >203:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+77F maintext CODE >204:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+77F maintext CODE >206:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+782 maintext CODE >209:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+783 maintext CODE >211:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+783 maintext CODE >212:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+786 maintext CODE >213:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+789 maintext CODE >214:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+78C maintext CODE >215:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+78F maintext CODE >216:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+792 maintext CODE >217:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+795 maintext CODE >218:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+798 maintext CODE >219:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+79B maintext CODE >220:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+79E maintext CODE >221:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7A4 maintext CODE >222:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7A5 maintext CODE >223:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7A5 maintext CODE >225:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7A8 maintext CODE >226:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7AB maintext CODE >228:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7B9 maintext CODE >230:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7BC maintext CODE >231:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C0 maintext CODE >233:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C0 maintext CODE >235:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C1 maintext CODE >236:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C1 maintext CODE >238:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C4 maintext CODE >239:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7C7 maintext CODE >240:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7CA maintext CODE >241:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7CD maintext CODE >242:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7D0 maintext CODE >243:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7D3 maintext CODE >244:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7D6 maintext CODE >245:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7DA maintext CODE >247:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7DB maintext CODE >248:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7DB maintext CODE >249:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7DC maintext CODE >250:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7F3 maintext CODE >256:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+7F4 maintext CODE >259:/home/federico/MPLABXProjects/ADCTEST.X/newmain.c
+3D7 clrtext CODE >335:/tmp/xcXmUIUZg
+3D7 clrtext CODE >336:/tmp/xcXmUIUZg
+3D8 clrtext CODE >337:/tmp/xcXmUIUZg
+3D8 clrtext CODE >338:/tmp/xcXmUIUZg
+3D9 clrtext CODE >339:/tmp/xcXmUIUZg
+3DA clrtext CODE >340:/tmp/xcXmUIUZg
+3DB clrtext CODE >341:/tmp/xcXmUIUZg
+3DC clrtext CODE >342:/tmp/xcXmUIUZg
+3DD clrtext CODE >343:/tmp/xcXmUIUZg
+3DE clrtext CODE >344:/tmp/xcXmUIUZg
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 1 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 4A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+_accionar_tension_grupo DB4 0 CODE 0 text18 dist/default/production/ADCTEST.X.production.o
+__end_of_apagar_grupo 92A 0 CODE 0 text29 dist/default/production/ADCTEST.X.production.o
+_ADC_start_conversion 798 0 CODE 0 text8 dist/default/production/ADCTEST.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_activar_uso_de_red 790 0 CODE 0 text17 dist/default/production/ADCTEST.X.production.o
+_apagar_led_red_disponible 778 0 CODE 0 text24 dist/default/production/ADCTEST.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+_ADC_stop_conversion 7A0 0 CODE 0 text7 dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_readValue 7D4 0 CODE 0 text10 dist/default/production/ADCTEST.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXK4hyas.o
+_main EC8 0 CODE 0 maintext dist/default/production/ADCTEST.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+start 0 0 CODE 0 init /tmp/xcXK4hyas.o
+__size_of_leer_canales 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_funcion_minima 982 0 CODE 0 text21 dist/default/production/ADCTEST.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_desactivar_combustible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_refrigeracion_de_grupo 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+_activar_uso_de_red 788 0 CODE 0 text17 dist/default/production/ADCTEST.X.production.o
+__end_of_leer_canales CE6 0 CODE 0 text6 dist/default/production/ADCTEST.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXK4hyas.o
+wtemp0 7E 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_selectorCanal 9E0 0 CODE 0 text9 dist/default/production/ADCTEST.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__size_of_encender_led_red_disponible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext -
+_flag_hubo_falla 38 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+encenderTransferencia@counter 45 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_activarArranque 8FE 0 CODE 0 text27 dist/default/production/ADCTEST.X.production.o
+_ADCON0 1F 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_ADCON1 9F 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_ADC_ON 7D4 0 CODE 0 text11 dist/default/production/ADCTEST.X.production.o
+__end_of_encender_led_red_disponible 798 0 CODE 0 text12 dist/default/production/ADCTEST.X.production.o
+_accionar_temperatura_presion B30 0 CODE 0 text28 dist/default/production/ADCTEST.X.production.o
+__size_of_desactivar_uso_de_red 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_leer_tension_grupo B30 0 CODE 0 text4 dist/default/production/ADCTEST.X.production.o
+__end_of_leer_tension_linea DB4 0 CODE 0 text3 dist/default/production/ADCTEST.X.production.o
+_activarPrecalentamiento 92A 0 CODE 0 text25 dist/default/production/ADCTEST.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+__end_of_activarPrecalentamiento 956 0 CODE 0 text25 dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_stop_conversion 7AE 0 CODE 0 text7 dist/default/production/ADCTEST.X.production.o
+__end_of_titilar_led_manual 9AE 0 CODE 0 text1 dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_ON 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_activarArranque 8D4 0 CODE 0 text27 dist/default/production/ADCTEST.X.production.o
+_leer_temperatura_presion B98 0 CODE 0 text5 dist/default/production/ADCTEST.X.production.o
+_grupo_disponible 816 0 CODE 0 text20 dist/default/production/ADCTEST.X.production.o
+_leer_tension_grupo ACA 0 CODE 0 text4 dist/default/production/ADCTEST.X.production.o
+_leer_tension_linea CE6 0 CODE 0 text3 dist/default/production/ADCTEST.X.production.o
+__end_of_accionar_tension_grupo EC8 0 CODE 0 text18 dist/default/production/ADCTEST.X.production.o
+start_initialization FEC 0 CODE 0 cinit dist/default/production/ADCTEST.X.production.o
+_ADC_selectorCanal 9AE 0 CODE 0 text9 dist/default/production/ADCTEST.X.production.o
+_titilar_led_manual 982 0 CODE 0 text1 dist/default/production/ADCTEST.X.production.o
+clear_ram0 7AE 0 CODE 0 clrtext dist/default/production/ADCTEST.X.production.o
+__pcstackBANK0 42 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__size_of_apagar_grupo_disponible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_activarCombustible 816 0 CODE 0 text26 dist/default/production/ADCTEST.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXK4hyas.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 BANK2 1 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+leer_tension_linea@verificar_red 44 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 BANK2 1 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit FEC 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lstack 0 0 STACK 2 stack -
+_desactivar_combustible 8AE 0 CODE 0 text13 dist/default/production/ADCTEST.X.production.o
+_refrigeracion_de_grupo A24 0 CODE 0 text2 dist/default/production/ADCTEST.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__end_of_configuracion_inicial A24 0 CODE 0 text14 dist/default/production/ADCTEST.X.production.o
+_ADC_setear_Clock 768 0 CODE 0 text31 dist/default/production/ADCTEST.X.production.o
+_activarCombustible 7F0 0 CODE 0 text26 dist/default/production/ADCTEST.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__end_of_grupo_disponible 83C 0 CODE 0 text20 dist/default/production/ADCTEST.X.production.o
+_RB0 30 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB1 31 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB2 32 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB3 33 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB4 34 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB5 35 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RB6 36 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC0 38 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC1 39 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC2 3A 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC3 3B 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC4 3C 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC5 3D 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC6 3E 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_RC7 3F 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__S0 2008 0 ABS 0 - -
+__S1 4A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__size_of_activar_uso_de_red 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_activarArranque 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_funcion_minima 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_accionar_temperatura_presion 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_grupo_disponible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+?_ADC_readValue 42 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_encenderTransferencia ACA 0 CODE 0 text22 dist/default/production/ADCTEST.X.production.o
+_configuracion_inicial 9E0 0 CODE 0 text14 dist/default/production/ADCTEST.X.production.o
+__end_of_accionar_temperatura_presion B98 0 CODE 0 text28 dist/default/production/ADCTEST.X.production.o
+_estado 2A 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__size_of_leer_temperatura_presion 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_start_conversion 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXK4hyas.o
+_encenderTransferencia A72 0 CODE 0 text22 dist/default/production/ADCTEST.X.production.o
+__end_of_encender_alarma 778 0 CODE 0 text30 dist/default/production/ADCTEST.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_lectura 20 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__size_of_apagar_grupo_en_uso 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_start_conversion 7A0 0 CODE 0 text8 dist/default/production/ADCTEST.X.production.o
+__ptext10 7BE 0 CODE 0 text10 dist/default/production/ADCTEST.X.production.o
+__ptext11 7D4 0 CODE 0 text11 dist/default/production/ADCTEST.X.production.o
+__ptext12 790 0 CODE 0 text12 dist/default/production/ADCTEST.X.production.o
+__ptext13 8AE 0 CODE 0 text13 dist/default/production/ADCTEST.X.production.o
+__ptext14 9E0 0 CODE 0 text14 dist/default/production/ADCTEST.X.production.o
+__ptext15 888 0 CODE 0 text15 dist/default/production/ADCTEST.X.production.o
+__ptext16 862 0 CODE 0 text16 dist/default/production/ADCTEST.X.production.o
+__ptext17 788 0 CODE 0 text17 dist/default/production/ADCTEST.X.production.o
+__ptext18 DB4 0 CODE 0 text18 dist/default/production/ADCTEST.X.production.o
+__ptext19 83C 0 CODE 0 text19 dist/default/production/ADCTEST.X.production.o
+__ptext20 816 0 CODE 0 text20 dist/default/production/ADCTEST.X.production.o
+__ptext21 956 0 CODE 0 text21 dist/default/production/ADCTEST.X.production.o
+__ptext22 A72 0 CODE 0 text22 dist/default/production/ADCTEST.X.production.o
+__ptext23 780 0 CODE 0 text23 dist/default/production/ADCTEST.X.production.o
+__ptext24 778 0 CODE 0 text24 dist/default/production/ADCTEST.X.production.o
+__ptext25 92A 0 CODE 0 text25 dist/default/production/ADCTEST.X.production.o
+__ptext26 7F0 0 CODE 0 text26 dist/default/production/ADCTEST.X.production.o
+__ptext27 8D4 0 CODE 0 text27 dist/default/production/ADCTEST.X.production.o
+__ptext28 B30 0 CODE 0 text28 dist/default/production/ADCTEST.X.production.o
+__ptext29 8FE 0 CODE 0 text29 dist/default/production/ADCTEST.X.production.o
+__ptext30 770 0 CODE 0 text30 dist/default/production/ADCTEST.X.production.o
+__ptext31 768 0 CODE 0 text31 dist/default/production/ADCTEST.X.production.o
+__pmaintext EC8 0 CODE 0 maintext dist/default/production/ADCTEST.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__size_of_accionar_tension_grupo 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+refrigeracion_de_grupo@contador 45 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+_reintentar_arranque 34 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_setear_Clock 770 0 CODE 0 text31 dist/default/production/ADCTEST.X.production.o
+_encender_led_red_disponible 790 0 CODE 0 text12 dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_setear_Clock 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_leer_tension_grupo 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_apagar_led_red_disponible 780 0 CODE 0 text24 dist/default/production/ADCTEST.X.production.o
+__size_of_leer_tension_linea 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+stackhi 0 0 ABS 0 - /tmp/xcXK4hyas.o
+stacklo 0 0 ABS 0 - /tmp/xcXK4hyas.o
+_encender_alarma 770 0 CODE 0 text30 dist/default/production/ADCTEST.X.production.o
+_apagar_grupo_en_uso 888 0 CODE 0 text15 dist/default/production/ADCTEST.X.production.o
+__size_of_titilar_led_manual 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__end_of_leer_temperatura_presion C3C 0 CODE 0 text5 dist/default/production/ADCTEST.X.production.o
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__size_of_activarPrecalentamiento 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_grupo_en_uso 83C 0 CODE 0 text19 dist/default/production/ADCTEST.X.production.o
+end_of_initialization FFA 0 CODE 0 cinit dist/default/production/ADCTEST.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__end_of_desactivar_combustible 8D4 0 CODE 0 text13 dist/default/production/ADCTEST.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_refrigeracion_de_grupo A72 0 CODE 0 text2 dist/default/production/ADCTEST.X.production.o
+__end_of_desactivar_uso_de_red 788 0 CODE 0 text23 dist/default/production/ADCTEST.X.production.o
+__ptext1 982 0 CODE 0 text1 dist/default/production/ADCTEST.X.production.o
+__ptext2 A24 0 CODE 0 text2 dist/default/production/ADCTEST.X.production.o
+__ptext3 CE6 0 CODE 0 text3 dist/default/production/ADCTEST.X.production.o
+__ptext4 ACA 0 CODE 0 text4 dist/default/production/ADCTEST.X.production.o
+__ptext5 B98 0 CODE 0 text5 dist/default/production/ADCTEST.X.production.o
+__ptext6 C3C 0 CODE 0 text6 dist/default/production/ADCTEST.X.production.o
+__ptext7 7A0 0 CODE 0 text7 dist/default/production/ADCTEST.X.production.o
+__ptext8 798 0 CODE 0 text8 dist/default/production/ADCTEST.X.production.o
+__ptext9 9AE 0 CODE 0 text9 dist/default/production/ADCTEST.X.production.o
+_ADC_readValue 7BE 0 CODE 0 text10 dist/default/production/ADCTEST.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_flag_inicio_grupo 40 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+_desactivar_uso_de_red 780 0 CODE 0 text23 dist/default/production/ADCTEST.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_grupo_en_uso 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_apagar_led_red_disponible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_activarCombustible 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of__initialization FFA 0 CODE 0 cinit dist/default/production/ADCTEST.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+_apagar_grupo 8FE 0 CODE 0 text29 dist/default/production/ADCTEST.X.production.o
+__size_of_encender_alarma 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production/ADCTEST.X.production.o
+leer_canales@canal 48 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_grupo_en_uso 862 0 CODE 0 text19 dist/default/production/ADCTEST.X.production.o
+__end_of_apagar_grupo_en_uso 8AE 0 CODE 0 text15 dist/default/production/ADCTEST.X.production.o
+__Hend_init 4 0 CODE 0 end_init -
+_apagar_grupo_disponible 862 0 CODE 0 text16 dist/default/production/ADCTEST.X.production.o
+ADC_selectorCanal@canal 42 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_main FEC 0 CODE 0 maintext dist/default/production/ADCTEST.X.production.o
+_flag_equipo_en_marcha 36 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__end_of_apagar_grupo_disponible 888 0 CODE 0 text16 dist/default/production/ADCTEST.X.production.o
+_ADRES 1E 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_selectorCanal 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_TRISB 86 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_TRISC 87 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+leer_tension_linea@no_iniciar 42 0 BANK0 1 cstackBANK0 dist/default/production/ADCTEST.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__size_of_configuracion_inicial 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__end_of_ADC_ON 7F0 0 CODE 0 text11 dist/default/production/ADCTEST.X.production.o
+_flag_parpadeo_automatico 3E 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+_led_manual 3A 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_stop_conversion 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_funcion_minima 956 0 CODE 0 text21 dist/default/production/ADCTEST.X.production.o
+_flag_inicio_red 3C 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__initialization FEC 0 CODE 0 cinit dist/default/production/ADCTEST.X.production.o
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production/ADCTEST.X.production.o
+__size_of_apagar_grupo 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+_leer_canales C3C 0 CODE 0 text6 dist/default/production/ADCTEST.X.production.o
+__size_of_ADC_readValue 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+__size_of_encenderTransferencia 0 0 ABS 0 - dist/default/production/ADCTEST.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7F6 FEC A 2
+text1 0 4C1 982 16 2
+text2 0 512 A24 27 2
+text3 0 673 CE6 67 2
+text4 0 565 ACA 33 2
+text5 0 5CC B98 52 2
+text6 0 61E C3C 55 2
+text7 0 3D0 7A0 7 2
+text8 0 3CC 798 4 2
+text9 0 4D7 9AE 19 2
+text10 0 3DF 7BE B 2
+text11 0 3EA 7D4 E 2
+text12 0 3C8 790 4 2
+text13 0 457 8AE 13 2
+text14 0 4F0 9E0 22 2
+text15 0 444 888 13 2
+text16 0 431 862 13 2
+text17 0 3C4 788 4 2
+text18 0 6DA DB4 8A 2
+text19 0 41E 83C 13 2
+text20 0 40B 816 13 2
+text21 0 4AB 956 16 2
+text22 0 539 A72 2C 2
+text23 0 3C0 780 4 2
+text24 0 3BC 778 4 2
+text25 0 495 92A 16 2
+text26 0 3F8 7F0 13 2
+text27 0 46A 8D4 15 2
+text28 0 598 B30 34 2
+text29 0 47F 8FE 16 2
+text30 0 3B8 770 4 2
+text31 0 3B4 768 4 2
+maintext 0 764 EC8 92 2
+reset_vec 0 0 0 2 2
+bssBANK0 1 20 20 2A 1
+clrtext 0 3D7 7AE 8 2
+config 0 2007 400E 1 2
