@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/ADCTEST.X.production.hex">
+  <executable name="dist/default/production\PIC_generator_group.production.hex">
     <memory name="program">
       <units>words</units>
       <length>4096</length>
-      <used>1100</used>
-      <free>2996</free>
+      <used>1192</used>
+      <free>2904</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

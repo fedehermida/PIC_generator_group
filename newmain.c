@@ -53,6 +53,10 @@ void apagar_funcion_minima();
 void desactivar_combustible();
 void refrigeracion_de_grupo();
 void apagar_grupo();
+void reintentar_inicio();
+void iniciar_equipo();
+void desactivarEquipo();
+void desactivarTensionGrupo();
 
 
 enum{
@@ -140,7 +144,7 @@ unsigned short int lectura[5] = {0};
 //Parametros programables
 
 #define PRECALENTAMIENTO_ESPERA 2000
-#define ARRANQUE_ESPERA 5000
+#define ARRANQUE_ESPERA 8000
 #define TIEMPO_ESTABILIZACION 20000
 #define TIEMPO_RETARDO_INICIO_GRUPO 4000
 #define TIEMPO_RETARDO_PARADA_GRUPO 45000
@@ -218,11 +222,27 @@ int main()
               grupo_disponible();
               grupo_en_uso();
               funcion_minima();
+              leer_canales();
+              leer_tension_grupo();
+              accionar_tension_grupo();
+              
+              if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+                  reintentar_inicio();
+              }
+              
               estado.tension_linea = GRUPO_EN_USO;
+              
+              
               break;
           case GRUPO_EN_USO:
               
               leer_tension_grupo();
+              
+              if(estado.tension_grupo == V_GRUP_ERROR || estado.tension_grupo == V_GRUP_SIN_TENSION){
+                  flag_hubo_falla = 1;
+                  desactivarTensionGrupo();
+              }
+              
               accionar_tension_grupo();
               
               if((estado.tension_grupo == V_GRUP_OK) && (flag_hubo_falla == 0)){
@@ -231,7 +251,7 @@ int main()
                 accionar_temperatura_presion();
               
               }
-              
+                            
               break;
           case TRANSFERENCIA_RED:
               
@@ -640,7 +660,7 @@ void accionar_combustible_onoff_cargaBat(){
         RB1 = 1;
         RB2 = 1;
         RB3 = 1;
-        RB4 = 1;
+        RB4 = 1;estado.tension_linea = GRUPO_EN_USO;
         RB5 = 1;
         RC0 = 1;
         RC3 = 1;
@@ -947,55 +967,85 @@ void accionar_tension_grupo(){
             
             
             //Prender LED Tension
+            if(flag_hubo_falla != 0){
             apagar_grupo();
             RB0 = 0;
             break;
             
+            }
+            
+            
         case V_GRUP_SIN_TENSION:
             
-            reintentar_arranque++;
-            
-            if(reintentar_arranque == 60){
-              desactivar_uso_de_red();
-              apagar_led_red_disponible();
-              encender_alarma();
-              activarCombustible();
-              activarPrecalentamiento();
-              activarArranque();
-              encenderTransferencia();
-              grupo_disponible();
-              grupo_en_uso();
-              funcion_minima();
-                
-            }
-            
-            if(reintentar_arranque == 120){
-              desactivar_uso_de_red();
-              apagar_led_red_disponible();
-              encender_alarma();
-              activarCombustible();
-              activarPrecalentamiento();
-              activarArranque();
-              encenderTransferencia();
-              grupo_disponible();
-              grupo_en_uso();
-              funcion_minima();  
-            }
-            
-            if(reintentar_arranque >= 121){
-                
+            if(reintentar_arranque == 2){
                 apagar_grupo();
                 //Enciendo led arranque fallido
                 RC3 = 0;
-                
+                break;
             }
             
+            if(flag_hubo_falla != 0){
+                apagar_grupo();
+                RC3 = 0;
+                break;
+            }
             
             break;
-    
+            
     }
+}
+
+void reintentar_inicio(){
+    desactivarEquipo();
+    reintentar_arranque++;
+    iniciar_equipo();
+              
+    if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+        desactivarEquipo();
+        iniciar_equipo();
+        reintentar_arranque++;
+        if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+            accionar_tension_grupo();
+        }
+        
+     }
+     
+    
+    estado.tension_linea = GRUPO_EN_USO;
+
+}
+
+void iniciar_equipo(){
+    desactivar_uso_de_red();
+    apagar_led_red_disponible();              
+    activarCombustible();
+    activarPrecalentamiento();
+    activarArranque();
+    encenderTransferencia();
+    grupo_disponible();
+    grupo_en_uso();
+    funcion_minima();
+    leer_canales();
+    leer_tension_grupo();
+    accionar_tension_grupo();
+
+}
 
 
+void desactivarEquipo(){
+    apagar_grupo_en_uso();
+    apagar_grupo_disponible();
+    desactivar_combustible();
+    __delay_ms(20000);
+    __delay_ms(10000);
+
+}
+
+void desactivarTensionGrupo(){
+    apagar_grupo_en_uso();
+    apagar_grupo_disponible();
+    desactivar_combustible();
+    encender_alarma();
 }
 
 

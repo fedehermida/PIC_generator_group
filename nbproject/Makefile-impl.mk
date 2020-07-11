@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ADCTEST.X
+PROJECTNAME=PIC_generator_group
 
 # Active Configuration
 DEFAULTCONF=default

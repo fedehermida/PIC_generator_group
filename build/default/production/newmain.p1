@@ -1,23 +1,23 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"69 newmain.c
-[; ;newmain.c: 69:     TEYPRE_OK,
+"73 newmain.c
+[; ;newmain.c: 73:     TEYPRE_OK,
 [s S80 `us 1 `us 1 `us 1 `us 1 `us 1 ]
 [n S80 estado temp_pre pulsadores combustibles tension_linea tension_grupo ]
 [p mainexit ]
-"1254 /opt/microchip/xc8/v2.00/pic/include/pic16f73.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1254: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+"1254 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1254: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1316
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1316: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1316: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "1204
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1204: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1204: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "1759
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1759: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1759: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
 "1038
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1038: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1038: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
 [v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
 "19 newmain.c
 [; ;newmain.c: 19: void accionar_combustible_onoff_cargaBat();
@@ -38,7 +38,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 40: void desactivar_combustible();
 [v _encender_led_red_disponible `(v ~T0 @X0 0 e? ]
 "48
-[; ;newmain.c: 48:     INDICE_COMBUSTIBLE,
+[; ;newmain.c: 48: 
 [v _desactivar_uso_de_red `(v ~T0 @X0 0 e? ]
 "41
 [; ;newmain.c: 41: void refrigeracion_de_grupo();
@@ -53,31 +53,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 27: void encender_led_red_disponible();
 [v _activarArranque `(v ~T0 @X0 0 e? ]
 "44
-[; ;newmain.c: 44: 
+[; ;newmain.c: 44: void iniciar_equipo();
 [v _encenderTransferencia `(v ~T0 @X0 0 e? ]
 "45
-[; ;newmain.c: 45: enum{
+[; ;newmain.c: 45: void desactivarEquipo();
 [v _grupo_disponible `(v ~T0 @X0 0 e? ]
 "46
-[; ;newmain.c: 46: 
+[; ;newmain.c: 46: void desactivarTensionGrupo();
 [v _grupo_en_uso `(v ~T0 @X0 0 e? ]
 "47
-[; ;newmain.c: 47:     INDICE_PULSADORES,
+[; ;newmain.c: 47: 
 [v _funcion_minima `(v ~T0 @X0 0 e? ]
-"221
-[; ;newmain.c: 221:               estado.tension_linea = GRUPO_EN_USO;
-[c E732 0 1 2 3 .. ]
-[n E732 . RED_TENSION TRANSFERENCIA_GRUPO GRUPO_EN_USO TRANSFERENCIA_RED  ]
 "36
 [; ;newmain.c: 36: void apagar_grupo_en_uso();
 [v _leer_tension_grupo `(v ~T0 @X0 0 e? ]
 "37
 [; ;newmain.c: 37: void apagar_grupo_disponible();
 [v _accionar_tension_grupo `(v ~T0 @X0 0 e? ]
-"228
-[; ;newmain.c: 228:               if((estado.tension_grupo == V_GRUP_OK) && (flag_hubo_falla == 0)){
-[c E728 0 1 2 .. ]
-[n E728 . V_GRUP_OK V_GRUP_ERROR V_GRUP_SIN_TENSION  ]
+"229
+[; ;newmain.c: 229:               if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+[c E732 0 1 2 .. ]
+[n E732 . V_GRUP_OK V_GRUP_ERROR V_GRUP_SIN_TENSION  ]
+"56
+[; ;newmain.c: 56: 
+[v _reintentar_inicio `(v ~T0 @X0 0 e? ]
+"233
+[; ;newmain.c: 233:               estado.tension_linea = GRUPO_EN_USO;
+[c E736 0 1 2 3 .. ]
+[n E736 . RED_TENSION TRANSFERENCIA_GRUPO GRUPO_EN_USO TRANSFERENCIA_RED  ]
+"59
+[; ;newmain.c: 59: 
+[v _desactivarTensionGrupo `(v ~T0 @X0 0 e? ]
 "33
 [; ;newmain.c: 33: void grupo_en_uso();
 [v _leer_temperatura_presion `(v ~T0 @X0 0 e? ]
@@ -85,2040 +91,2173 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 34: void funcion_minima();
 [v _accionar_temperatura_presion `(v ~T0 @X0 0 e? ]
 "49
-[; ;newmain.c: 49:     INDICE_TEMPERATURA_PRESION,
+[; ;newmain.c: 49: enum{
 [v _apagar_grupo_en_uso `(v ~T0 @X0 0 e? ]
 "50
-[; ;newmain.c: 50:     INDICE_TENSION_LINEA,
+[; ;newmain.c: 50: 
 [v _apagar_grupo_disponible `(v ~T0 @X0 0 e? ]
 "51
-[; ;newmain.c: 51:     INDICE_TENSION_DE_GRUPO
+[; ;newmain.c: 51:     INDICE_PULSADORES,
 [v _activar_uso_de_red `(v ~T0 @X0 0 e? ]
 "54
-[; ;newmain.c: 54: };
+[; ;newmain.c: 54:     INDICE_TENSION_LINEA,
 [v _refrigeracion_de_grupo `(v ~T0 @X0 0 e? ]
 "53
-[; ;newmain.c: 53: 
+[; ;newmain.c: 53:     INDICE_TEMPERATURA_PRESION,
 [v _desactivar_combustible `(v ~T0 @X0 0 e? ]
 [v F651 `(v ~T0 @X0 1 tf1`ul ]
-"92 /opt/microchip/xc8/v2.00/pic/include/pic.h
+"92 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF651 ~T0 @X0 0 e ]
 [p i __delay ]
-"1018 /opt/microchip/xc8/v2.00/pic/include/pic16f73.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1018: extern volatile unsigned char ADRES __attribute__((address(0x01E)));
+"1018 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1018: extern volatile unsigned char ADRES __attribute__((address(0x01E)));
 [v _ADRES `Vuc ~T0 @X0 0 e@30 ]
 "2075
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2075: extern volatile __bit RC1 __attribute__((address(0x39)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2075: extern volatile __bit RC1 __attribute__((address(0x39)));
 [v _RC1 `Vb ~T0 @X0 0 e@57 ]
 "2087
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2087: extern volatile __bit RC5 __attribute__((address(0x3D)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2087: extern volatile __bit RC5 __attribute__((address(0x3D)));
 [v _RC5 `Vb ~T0 @X0 0 e@61 ]
 "2054
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2054: extern volatile __bit RB4 __attribute__((address(0x34)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2054: extern volatile __bit RB4 __attribute__((address(0x34)));
 [v _RB4 `Vb ~T0 @X0 0 e@52 ]
 "42 newmain.c
 [; ;newmain.c: 42: void apagar_grupo();
 [v _encender_alarma `(v ~T0 @X0 0 e? ]
-"2084 /opt/microchip/xc8/v2.00/pic/include/pic16f73.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2084: extern volatile __bit RC4 __attribute__((address(0x3C)));
+"2084 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2084: extern volatile __bit RC4 __attribute__((address(0x3C)));
 [v _RC4 `Vb ~T0 @X0 0 e@60 ]
 "2090
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2090: extern volatile __bit RC6 __attribute__((address(0x3E)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2090: extern volatile __bit RC6 __attribute__((address(0x3E)));
 [v _RC6 `Vb ~T0 @X0 0 e@62 ]
 "2057
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2057: extern volatile __bit RB5 __attribute__((address(0x35)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2057: extern volatile __bit RB5 __attribute__((address(0x35)));
 [v _RB5 `Vb ~T0 @X0 0 e@53 ]
 "2078
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2078: extern volatile __bit RC2 __attribute__((address(0x3A)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2078: extern volatile __bit RC2 __attribute__((address(0x3A)));
 [v _RC2 `Vb ~T0 @X0 0 e@58 ]
 "2093
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2093: extern volatile __bit RC7 __attribute__((address(0x3F)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2093: extern volatile __bit RC7 __attribute__((address(0x3F)));
 [v _RC7 `Vb ~T0 @X0 0 e@63 ]
 "2060
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2060: extern volatile __bit RB6 __attribute__((address(0x36)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2060: extern volatile __bit RB6 __attribute__((address(0x36)));
 [v _RB6 `Vb ~T0 @X0 0 e@54 ]
 "2051
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2051: extern volatile __bit RB3 __attribute__((address(0x33)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2051: extern volatile __bit RB3 __attribute__((address(0x33)));
 [v _RB3 `Vb ~T0 @X0 0 e@51 ]
-"511 newmain.c
-[; ;newmain.c: 511:     if(lectura[INDICE_PULSADORES] < 15){
-[c E698 0 1 2 3 4 .. ]
-[n E698 . INDICE_PULSADORES INDICE_COMBUSTIBLE INDICE_TEMPERATURA_PRESION INDICE_TENSION_LINEA INDICE_TENSION_DE_GRUPO  ]
-"512
-[; ;newmain.c: 512:          estado.pulsadores = PULSAD_ON;
-[c E716 0 1 2 3 4 .. ]
-[n E716 . PULSAD_NADA PULSAD_ON PULSAD_OFF PULSAD_MANUAL PULSAD_AUTO  ]
-"2042 /opt/microchip/xc8/v2.00/pic/include/pic16f73.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2042: extern volatile __bit RB0 __attribute__((address(0x30)));
+"531 newmain.c
+[; ;newmain.c: 531:     if(lectura[INDICE_PULSADORES] < 15){
+[c E702 0 1 2 3 4 .. ]
+[n E702 . INDICE_PULSADORES INDICE_COMBUSTIBLE INDICE_TEMPERATURA_PRESION INDICE_TENSION_LINEA INDICE_TENSION_DE_GRUPO  ]
+"532
+[; ;newmain.c: 532:          estado.pulsadores = PULSAD_ON;
+[c E720 0 1 2 3 4 .. ]
+[n E720 . PULSAD_NADA PULSAD_ON PULSAD_OFF PULSAD_MANUAL PULSAD_AUTO  ]
+"2042 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2042: extern volatile __bit RB0 __attribute__((address(0x30)));
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
 "2045
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2045: extern volatile __bit RB1 __attribute__((address(0x31)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2045: extern volatile __bit RB1 __attribute__((address(0x31)));
 [v _RB1 `Vb ~T0 @X0 0 e@49 ]
 "2048
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2048: extern volatile __bit RB2 __attribute__((address(0x32)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2048: extern volatile __bit RB2 __attribute__((address(0x32)));
 [v _RB2 `Vb ~T0 @X0 0 e@50 ]
 "2072
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2072: extern volatile __bit RC0 __attribute__((address(0x38)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2072: extern volatile __bit RC0 __attribute__((address(0x38)));
 [v _RC0 `Vb ~T0 @X0 0 e@56 ]
 "2081
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 2081: extern volatile __bit RC3 __attribute__((address(0x3B)));
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 2081: extern volatile __bit RC3 __attribute__((address(0x3B)));
 [v _RC3 `Vb ~T0 @X0 0 e@59 ]
-"778 newmain.c
-[; ;newmain.c: 778:         estado.temp_pre = TEYPRE_ERRORAMBAS;
-[c E711 0 1 2 3 .. ]
-[n E711 . TEYPRE_TEMPALTA TEYPRE_OK TEYPRE_ERRORAMBAS TEYPRE_PREBAJA  ]
-"54 /opt/microchip/xc8/v2.00/pic/include/pic16f73.h
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 54: __asm("INDF equ 00h");
+"798 newmain.c
+[; ;newmain.c: 798:         estado.temp_pre = TEYPRE_ERRORAMBAS;
+[c E715 0 1 2 3 .. ]
+[n E715 . TEYPRE_TEMPALTA TEYPRE_OK TEYPRE_ERRORAMBAS TEYPRE_PREBAJA  ]
+"58
+[; ;newmain.c: 58: };
+[v _desactivarEquipo `(v ~T0 @X0 0 e? ]
+"57
+[; ;newmain.c: 57: 
+[v _iniciar_equipo `(v ~T0 @X0 0 e? ]
+"54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
 "61
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 61: __asm("TMR0 equ 01h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 61: __asm("TMR0 equ 01h");
 [; <" TMR0 equ 01h ;# ">
 "68
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 68: __asm("PCL equ 02h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 68: __asm("PCL equ 02h");
 [; <" PCL equ 02h ;# ">
 "75
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 75: __asm("STATUS equ 03h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 75: __asm("STATUS equ 03h");
 [; <" STATUS equ 03h ;# ">
 "161
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 161: __asm("FSR equ 04h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 161: __asm("FSR equ 04h");
 [; <" FSR equ 04h ;# ">
 "168
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 168: __asm("PORTA equ 05h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 168: __asm("PORTA equ 05h");
 [; <" PORTA equ 05h ;# ">
 "218
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 218: __asm("PORTB equ 06h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 218: __asm("PORTB equ 06h");
 [; <" PORTB equ 06h ;# ">
 "280
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 280: __asm("PORTC equ 07h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 280: __asm("PORTC equ 07h");
 [; <" PORTC equ 07h ;# ">
 "342
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 342: __asm("PCLATH equ 0Ah");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 342: __asm("PCLATH equ 0Ah");
 [; <" PCLATH equ 0Ah ;# ">
 "362
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 362: __asm("INTCON equ 0Bh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 362: __asm("INTCON equ 0Bh");
 [; <" INTCON equ 0Bh ;# ">
 "440
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 440: __asm("PIR1 equ 0Ch");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 440: __asm("PIR1 equ 0Ch");
 [; <" PIR1 equ 0Ch ;# ">
 "496
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 496: __asm("PIR2 equ 0Dh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 496: __asm("PIR2 equ 0Dh");
 [; <" PIR2 equ 0Dh ;# ">
 "516
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 516: __asm("TMR1 equ 0Eh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 516: __asm("TMR1 equ 0Eh");
 [; <" TMR1 equ 0Eh ;# ">
 "523
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 523: __asm("TMR1L equ 0Eh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 523: __asm("TMR1L equ 0Eh");
 [; <" TMR1L equ 0Eh ;# ">
 "530
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 530: __asm("TMR1H equ 0Fh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 530: __asm("TMR1H equ 0Fh");
 [; <" TMR1H equ 0Fh ;# ">
 "537
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 537: __asm("T1CON equ 010h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 537: __asm("T1CON equ 010h");
 [; <" T1CON equ 010h ;# ">
 "603
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 603: __asm("TMR2 equ 011h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 603: __asm("TMR2 equ 011h");
 [; <" TMR2 equ 011h ;# ">
 "610
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 610: __asm("T2CON equ 012h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 610: __asm("T2CON equ 012h");
 [; <" T2CON equ 012h ;# ">
 "681
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 681: __asm("SSPBUF equ 013h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 681: __asm("SSPBUF equ 013h");
 [; <" SSPBUF equ 013h ;# ">
 "688
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 688: __asm("SSPCON equ 014h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 688: __asm("SSPCON equ 014h");
 [; <" SSPCON equ 014h ;# ">
 "758
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 758: __asm("CCPR1 equ 015h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 758: __asm("CCPR1 equ 015h");
 [; <" CCPR1 equ 015h ;# ">
 "765
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 765: __asm("CCPR1L equ 015h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 765: __asm("CCPR1L equ 015h");
 [; <" CCPR1L equ 015h ;# ">
 "772
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 772: __asm("CCPR1H equ 016h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 772: __asm("CCPR1H equ 016h");
 [; <" CCPR1H equ 016h ;# ">
 "779
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 779: __asm("CCP1CON equ 017h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 779: __asm("CCP1CON equ 017h");
 [; <" CCP1CON equ 017h ;# ">
 "837
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 837: __asm("RCSTA equ 018h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 837: __asm("RCSTA equ 018h");
 [; <" RCSTA equ 018h ;# ">
 "927
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 927: __asm("TXREG equ 019h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 927: __asm("TXREG equ 019h");
 [; <" TXREG equ 019h ;# ">
 "934
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 934: __asm("RCREG equ 01Ah");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 934: __asm("RCREG equ 01Ah");
 [; <" RCREG equ 01Ah ;# ">
 "941
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 941: __asm("CCPR2 equ 01Bh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 941: __asm("CCPR2 equ 01Bh");
 [; <" CCPR2 equ 01Bh ;# ">
 "948
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 948: __asm("CCPR2L equ 01Bh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 948: __asm("CCPR2L equ 01Bh");
 [; <" CCPR2L equ 01Bh ;# ">
 "955
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 955: __asm("CCPR2H equ 01Ch");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 955: __asm("CCPR2H equ 01Ch");
 [; <" CCPR2H equ 01Ch ;# ">
 "962
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 962: __asm("CCP2CON equ 01Dh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 962: __asm("CCP2CON equ 01Dh");
 [; <" CCP2CON equ 01Dh ;# ">
 "1020
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1020: __asm("ADRES equ 01Eh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1020: __asm("ADRES equ 01Eh");
 [; <" ADRES equ 01Eh ;# ">
 "1040
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1040: __asm("ADCON0 equ 01Fh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1040: __asm("ADCON0 equ 01Fh");
 [; <" ADCON0 equ 01Fh ;# ">
 "1136
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1136: __asm("OPTION_REG equ 081h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1136: __asm("OPTION_REG equ 081h");
 [; <" OPTION_REG equ 081h ;# ">
 "1206
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1206: __asm("TRISA equ 085h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1206: __asm("TRISA equ 085h");
 [; <" TRISA equ 085h ;# ">
 "1256
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1256: __asm("TRISB equ 086h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1256: __asm("TRISB equ 086h");
 [; <" TRISB equ 086h ;# ">
 "1318
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1318: __asm("TRISC equ 087h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1318: __asm("TRISC equ 087h");
 [; <" TRISC equ 087h ;# ">
 "1380
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1380: __asm("PIE1 equ 08Ch");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1380: __asm("PIE1 equ 08Ch");
 [; <" PIE1 equ 08Ch ;# ">
 "1436
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1436: __asm("PIE2 equ 08Dh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1436: __asm("PIE2 equ 08Dh");
 [; <" PIE2 equ 08Dh ;# ">
 "1456
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1456: __asm("PCON equ 08Eh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1456: __asm("PCON equ 08Eh");
 [; <" PCON equ 08Eh ;# ">
 "1490
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1490: __asm("PR2 equ 092h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1490: __asm("PR2 equ 092h");
 [; <" PR2 equ 092h ;# ">
 "1497
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1497: __asm("SSPADD equ 093h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1497: __asm("SSPADD equ 093h");
 [; <" SSPADD equ 093h ;# ">
 "1504
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1504: __asm("SSPSTAT equ 094h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1504: __asm("SSPSTAT equ 094h");
 [; <" SSPSTAT equ 094h ;# ">
 "1673
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1673: __asm("TXSTA equ 098h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1673: __asm("TXSTA equ 098h");
 [; <" TXSTA equ 098h ;# ">
 "1754
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1754: __asm("SPBRG equ 099h");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1754: __asm("SPBRG equ 099h");
 [; <" SPBRG equ 099h ;# ">
 "1761
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1761: __asm("ADCON1 equ 09Fh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1761: __asm("ADCON1 equ 09Fh");
 [; <" ADCON1 equ 09Fh ;# ">
 "1801
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1801: __asm("PMDATA equ 010Ch");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1801: __asm("PMDATA equ 010Ch");
 [; <" PMDATA equ 010Ch ;# ">
 "1808
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1808: __asm("PMADR equ 010Dh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1808: __asm("PMADR equ 010Dh");
 [; <" PMADR equ 010Dh ;# ">
 "1815
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1815: __asm("PMDATH equ 010Eh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1815: __asm("PMDATH equ 010Eh");
 [; <" PMDATH equ 010Eh ;# ">
 "1822
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1822: __asm("PMADRH equ 010Fh");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1822: __asm("PMADRH equ 010Fh");
 [; <" PMADRH equ 010Fh ;# ">
 "1829
-[; ;/opt/microchip/xc8/v2.00/pic/include/pic16f73.h: 1829: __asm("PMCON1 equ 018Ch");
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f73.h: 1829: __asm("PMCON1 equ 018Ch");
 [; <" PMCON1 equ 018Ch ;# ">
 "11 newmain.c
 [; ;newmain.c: 11: void leer_canales();
 [p x WDTE = OFF  PWRTE = OFF  FOSC = HS ]
-"125
+"129
 [v _estado `S80 ~T0 @X0 1 e ]
-"127
+"131
 [v _lectura `us ~T0 @X0 -> 5 `i e ]
 [i _lectura
 :U ..
 -> -> 0 `i `us
 ..
 ]
-"154
-[; ;newmain.c: 154: unsigned short int flag_inicio_grupo = 0;
+"158
+[; ;newmain.c: 158: unsigned short int flag_inicio_grupo = 0;
 [v _flag_inicio_grupo `us ~T0 @X0 1 e ]
 [i _flag_inicio_grupo
 -> -> 0 `i `us
 ]
-"155
-[; ;newmain.c: 155: unsigned short int flag_parpadeo_automatico = 0;
+"159
+[; ;newmain.c: 159: unsigned short int flag_parpadeo_automatico = 0;
 [v _flag_parpadeo_automatico `us ~T0 @X0 1 e ]
 [i _flag_parpadeo_automatico
 -> -> 0 `i `us
 ]
-"156
-[; ;newmain.c: 156: unsigned short int flag_inicio_red = 0;
+"160
+[; ;newmain.c: 160: unsigned short int flag_inicio_red = 0;
 [v _flag_inicio_red `us ~T0 @X0 1 e ]
 [i _flag_inicio_red
 -> -> 0 `i `us
 ]
-"157
-[; ;newmain.c: 157: unsigned int led_manual = 0;
+"161
+[; ;newmain.c: 161: unsigned int led_manual = 0;
 [v _led_manual `ui ~T0 @X0 1 e ]
 [i _led_manual
 -> -> 0 `i `ui
 ]
-"158
-[; ;newmain.c: 158: unsigned short int flag_hubo_falla = 0;
+"162
+[; ;newmain.c: 162: unsigned short int flag_hubo_falla = 0;
 [v _flag_hubo_falla `us ~T0 @X0 1 e ]
 [i _flag_hubo_falla
 -> -> 0 `i `us
 ]
-"159
-[; ;newmain.c: 159: unsigned short int flag_equipo_en_marcha = 0;
+"163
+[; ;newmain.c: 163: unsigned short int flag_equipo_en_marcha = 0;
 [v _flag_equipo_en_marcha `us ~T0 @X0 1 e ]
 [i _flag_equipo_en_marcha
 -> -> 0 `i `us
 ]
-"160
-[; ;newmain.c: 160: unsigned short int reintentar_arranque = 0;
+"164
+[; ;newmain.c: 164: unsigned short int reintentar_arranque = 0;
 [v _reintentar_arranque `us ~T0 @X0 1 e ]
 [i _reintentar_arranque
 -> -> 0 `i `us
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"163
-[; ;newmain.c: 163: int main()
+"167
+[; ;newmain.c: 167: int main()
 [v _main `(i ~T0 @X0 1 ef ]
-"164
-[; ;newmain.c: 164: {
+"168
+[; ;newmain.c: 168: {
 {
 [e :U _main ]
 [f ]
-"170
-[; ;newmain.c: 170:   TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"171
-[; ;newmain.c: 171:   TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
 "174
-[; ;newmain.c: 174:   TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
-"177
-[; ;newmain.c: 177:    ADCON1 = 0b00000000;
-[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;newmain.c: 174:   TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"175
+[; ;newmain.c: 175:   TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "178
-[; ;newmain.c: 178:    ADCON0 = 0b00000000;
-[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;newmain.c: 178:   TRISA = 0xFF;
+[e = _TRISA -> -> 255 `i `uc ]
 "181
-[; ;newmain.c: 181:    ADC_setear_Clock();
+[; ;newmain.c: 181:    ADCON1 = 0b00000000;
+[e = _ADCON1 -> -> 0 `i `uc ]
+"182
+[; ;newmain.c: 182:    ADCON0 = 0b00000000;
+[e = _ADCON0 -> -> 0 `i `uc ]
+"185
+[; ;newmain.c: 185:    ADC_setear_Clock();
 [e ( _ADC_setear_Clock ..  ]
-"184
-[; ;newmain.c: 184:    configuracion_inicial();
+"188
+[; ;newmain.c: 188:    configuracion_inicial();
 [e ( _configuracion_inicial ..  ]
-"186
-[; ;newmain.c: 186:   while(1)
-[e :U 83 ]
-"187
-[; ;newmain.c: 187:   {
-{
 "190
-[; ;newmain.c: 190:       leer_canales();
+[; ;newmain.c: 190:   while(1)
+[e :U 83 ]
+"191
+[; ;newmain.c: 191:   {
+{
+"194
+[; ;newmain.c: 194:       leer_canales();
 [e ( _leer_canales ..  ]
-"195
-[; ;newmain.c: 195:       leer_tension_linea();
-[e ( _leer_tension_linea ..  ]
 "199
-[; ;newmain.c: 199:       titilar_led_manual();
-[e ( _titilar_led_manual ..  ]
+[; ;newmain.c: 199:       leer_tension_linea();
+[e ( _leer_tension_linea ..  ]
 "203
-[; ;newmain.c: 203:       switch(estado.tension_linea){
+[; ;newmain.c: 203:       titilar_led_manual();
+[e ( _titilar_led_manual ..  ]
+"207
+[; ;newmain.c: 207:       switch(estado.tension_linea){
 [e $U 86  ]
 {
-"204
-[; ;newmain.c: 204:           case RED_TENSION:
+"208
+[; ;newmain.c: 208:           case RED_TENSION:
 [e :U 87 ]
-"206
-[; ;newmain.c: 206:               encender_led_red_disponible();
+"210
+[; ;newmain.c: 210:               encender_led_red_disponible();
 [e ( _encender_led_red_disponible ..  ]
-"209
-[; ;newmain.c: 209:               break;
-[e $U 85  ]
-"211
-[; ;newmain.c: 211:           case TRANSFERENCIA_GRUPO:
-[e :U 88 ]
-"212
-[; ;newmain.c: 212:               desactivar_uso_de_red();
-[e ( _desactivar_uso_de_red ..  ]
 "213
-[; ;newmain.c: 213:               apagar_led_red_disponible();
-[e ( _apagar_led_red_disponible ..  ]
-"214
-[; ;newmain.c: 214:               activarCombustible();
-[e ( _activarCombustible ..  ]
-"215
-[; ;newmain.c: 215:               activarPrecalentamiento();
-[e ( _activarPrecalentamiento ..  ]
-"216
-[; ;newmain.c: 216:               activarArranque();
-[e ( _activarArranque ..  ]
-"217
-[; ;newmain.c: 217:               encenderTransferencia();
-[e ( _encenderTransferencia ..  ]
-"218
-[; ;newmain.c: 218:               grupo_disponible();
-[e ( _grupo_disponible ..  ]
-"219
-[; ;newmain.c: 219:               grupo_en_uso();
-[e ( _grupo_en_uso ..  ]
-"220
-[; ;newmain.c: 220:               funcion_minima();
-[e ( _funcion_minima ..  ]
-"221
-[; ;newmain.c: 221:               estado.tension_linea = GRUPO_EN_USO;
-[e = . _estado 3 -> . `E732 2 `us ]
-"222
-[; ;newmain.c: 222:               break;
+[; ;newmain.c: 213:               break;
 [e $U 85  ]
+"215
+[; ;newmain.c: 215:           case TRANSFERENCIA_GRUPO:
+[e :U 88 ]
+"216
+[; ;newmain.c: 216:               desactivar_uso_de_red();
+[e ( _desactivar_uso_de_red ..  ]
+"217
+[; ;newmain.c: 217:               apagar_led_red_disponible();
+[e ( _apagar_led_red_disponible ..  ]
+"218
+[; ;newmain.c: 218:               activarCombustible();
+[e ( _activarCombustible ..  ]
+"219
+[; ;newmain.c: 219:               activarPrecalentamiento();
+[e ( _activarPrecalentamiento ..  ]
+"220
+[; ;newmain.c: 220:               activarArranque();
+[e ( _activarArranque ..  ]
+"221
+[; ;newmain.c: 221:               encenderTransferencia();
+[e ( _encenderTransferencia ..  ]
+"222
+[; ;newmain.c: 222:               grupo_disponible();
+[e ( _grupo_disponible ..  ]
 "223
-[; ;newmain.c: 223:           case GRUPO_EN_USO:
-[e :U 89 ]
+[; ;newmain.c: 223:               grupo_en_uso();
+[e ( _grupo_en_uso ..  ]
+"224
+[; ;newmain.c: 224:               funcion_minima();
+[e ( _funcion_minima ..  ]
 "225
-[; ;newmain.c: 225:               leer_tension_grupo();
-[e ( _leer_tension_grupo ..  ]
+[; ;newmain.c: 225:               leer_canales();
+[e ( _leer_canales ..  ]
 "226
-[; ;newmain.c: 226:               accionar_tension_grupo();
+[; ;newmain.c: 226:               leer_tension_grupo();
+[e ( _leer_tension_grupo ..  ]
+"227
+[; ;newmain.c: 227:               accionar_tension_grupo();
 [e ( _accionar_tension_grupo ..  ]
-"228
-[; ;newmain.c: 228:               if((estado.tension_grupo == V_GRUP_OK) && (flag_hubo_falla == 0)){
-[e $ ! && == -> . _estado 4 `ui -> . `E728 0 `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 90  ]
+"229
+[; ;newmain.c: 229:               if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+[e $ ! && != -> . _estado 4 `ui -> . `E732 0 `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 89  ]
 {
 "230
-[; ;newmain.c: 230:                 leer_temperatura_presion();
-[e ( _leer_temperatura_presion ..  ]
+[; ;newmain.c: 230:                   reintentar_inicio();
+[e ( _reintentar_inicio ..  ]
 "231
-[; ;newmain.c: 231:                 accionar_temperatura_presion();
-[e ( _accionar_temperatura_presion ..  ]
-"233
-[; ;newmain.c: 233:               }
+[; ;newmain.c: 231:               }
 }
-[e :U 90 ]
-"235
-[; ;newmain.c: 235:               break;
-[e $U 85  ]
+[e :U 89 ]
+"233
+[; ;newmain.c: 233:               estado.tension_linea = GRUPO_EN_USO;
+[e = . _estado 3 -> . `E736 2 `us ]
 "236
-[; ;newmain.c: 236:           case TRANSFERENCIA_RED:
-[e :U 91 ]
-"238
-[; ;newmain.c: 238:               apagar_grupo_en_uso();
-[e ( _apagar_grupo_en_uso ..  ]
+[; ;newmain.c: 236:               break;
+[e $U 85  ]
+"237
+[; ;newmain.c: 237:           case GRUPO_EN_USO:
+[e :U 90 ]
 "239
-[; ;newmain.c: 239:               encenderTransferencia();
-[e ( _encenderTransferencia ..  ]
-"240
-[; ;newmain.c: 240:               apagar_grupo_disponible();
-[e ( _apagar_grupo_disponible ..  ]
+[; ;newmain.c: 239:               leer_tension_grupo();
+[e ( _leer_tension_grupo ..  ]
 "241
-[; ;newmain.c: 241:               encender_led_red_disponible();
-[e ( _encender_led_red_disponible ..  ]
+[; ;newmain.c: 241:               if(estado.tension_grupo == V_GRUP_ERROR || estado.tension_grupo == V_GRUP_SIN_TENSION){
+[e $ ! || == -> . _estado 4 `ui -> . `E732 1 `ui == -> . _estado 4 `ui -> . `E732 2 `ui 91  ]
+{
 "242
-[; ;newmain.c: 242:               activar_uso_de_red();
-[e ( _activar_uso_de_red ..  ]
+[; ;newmain.c: 242:                   flag_hubo_falla = 1;
+[e = _flag_hubo_falla -> -> 1 `i `us ]
 "243
-[; ;newmain.c: 243:               refrigeracion_de_grupo();
-[e ( _refrigeracion_de_grupo ..  ]
+[; ;newmain.c: 243:                   desactivarTensionGrupo();
+[e ( _desactivarTensionGrupo ..  ]
 "244
-[; ;newmain.c: 244:               desactivar_combustible();
-[e ( _desactivar_combustible ..  ]
-"245
-[; ;newmain.c: 245:               estado.tension_linea = RED_TENSION;
-[e = . _estado 3 -> . `E732 0 `us ]
-"247
-[; ;newmain.c: 247:               break;
-[e $U 85  ]
+[; ;newmain.c: 244:               }
+}
+[e :U 91 ]
+"246
+[; ;newmain.c: 246:               accionar_tension_grupo();
+[e ( _accionar_tension_grupo ..  ]
 "248
-[; ;newmain.c: 248:           default:
-[e :U 92 ]
-"249
-[; ;newmain.c: 249:               break;
-[e $U 85  ]
+[; ;newmain.c: 248:               if((estado.tension_grupo == V_GRUP_OK) && (flag_hubo_falla == 0)){
+[e $ ! && == -> . _estado 4 `ui -> . `E732 0 `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 92  ]
+{
 "250
-[; ;newmain.c: 250:       }
+[; ;newmain.c: 250:                 leer_temperatura_presion();
+[e ( _leer_temperatura_presion ..  ]
+"251
+[; ;newmain.c: 251:                 accionar_temperatura_presion();
+[e ( _accionar_temperatura_presion ..  ]
+"253
+[; ;newmain.c: 253:               }
+}
+[e :U 92 ]
+"255
+[; ;newmain.c: 255:               break;
+[e $U 85  ]
+"256
+[; ;newmain.c: 256:           case TRANSFERENCIA_RED:
+[e :U 93 ]
+"258
+[; ;newmain.c: 258:               apagar_grupo_en_uso();
+[e ( _apagar_grupo_en_uso ..  ]
+"259
+[; ;newmain.c: 259:               encenderTransferencia();
+[e ( _encenderTransferencia ..  ]
+"260
+[; ;newmain.c: 260:               apagar_grupo_disponible();
+[e ( _apagar_grupo_disponible ..  ]
+"261
+[; ;newmain.c: 261:               encender_led_red_disponible();
+[e ( _encender_led_red_disponible ..  ]
+"262
+[; ;newmain.c: 262:               activar_uso_de_red();
+[e ( _activar_uso_de_red ..  ]
+"263
+[; ;newmain.c: 263:               refrigeracion_de_grupo();
+[e ( _refrigeracion_de_grupo ..  ]
+"264
+[; ;newmain.c: 264:               desactivar_combustible();
+[e ( _desactivar_combustible ..  ]
+"265
+[; ;newmain.c: 265:               estado.tension_linea = RED_TENSION;
+[e = . _estado 3 -> . `E736 0 `us ]
+"267
+[; ;newmain.c: 267:               break;
+[e $U 85  ]
+"268
+[; ;newmain.c: 268:           default:
+[e :U 94 ]
+"269
+[; ;newmain.c: 269:               break;
+[e $U 85  ]
+"270
+[; ;newmain.c: 270:       }
 }
 [e $U 85  ]
 [e :U 86 ]
-[e [\ -> . _estado 3 `ui , $ -> . `E732 0 `ui 87
- , $ -> . `E732 1 `ui 88
- , $ -> . `E732 2 `ui 89
- , $ -> . `E732 3 `ui 91
- 92 ]
+[e [\ -> . _estado 3 `ui , $ -> . `E736 0 `ui 87
+ , $ -> . `E736 1 `ui 88
+ , $ -> . `E736 2 `ui 90
+ , $ -> . `E736 3 `ui 93
+ 94 ]
 [e :U 85 ]
-"256
-[; ;newmain.c: 256:   }
+"276
+[; ;newmain.c: 276:   }
 }
 [e :U 82 ]
 [e $U 83  ]
 [e :U 84 ]
-"258
-[; ;newmain.c: 258:   return 0;
+"278
+[; ;newmain.c: 278:   return 0;
 [e ) -> 0 `i ]
 [e $UE 81  ]
-"259
-[; ;newmain.c: 259: }
+"279
+[; ;newmain.c: 279: }
 [e :UE 81 ]
 }
-"261
-[; ;newmain.c: 261: void ADC_selectorCanal(unsigned short int canal){
+"281
+[; ;newmain.c: 281: void ADC_selectorCanal(unsigned short int canal){
 [v _ADC_selectorCanal `(v ~T0 @X0 1 ef1`us ]
 {
 [e :U _ADC_selectorCanal ]
 [v _canal `us ~T0 @X0 1 r1 ]
 [f ]
-"263
-[; ;newmain.c: 263:     ADCON0 = (ADCON0 & 0b11000111) | (canal << 3);
+"283
+[; ;newmain.c: 283:     ADCON0 = (ADCON0 & 0b11000111) | (canal << 3);
 [e = _ADCON0 -> | -> & -> _ADCON0 `i -> 199 `i `ui << -> _canal `ui -> 3 `i `uc ]
-"264
-[; ;newmain.c: 264:     _delay((unsigned long)((20)*(4000000/4000.0)));
+"284
+[; ;newmain.c: 284:     _delay((unsigned long)((20)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"265
-[; ;newmain.c: 265: }
-[e :UE 93 ]
+"285
+[; ;newmain.c: 285: }
+[e :UE 95 ]
 }
-"268
-[; ;newmain.c: 268: void ADC_setear_Clock(){
+"288
+[; ;newmain.c: 288: void ADC_setear_Clock(){
 [v _ADC_setear_Clock `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_setear_Clock ]
 [f ]
-"271
-[; ;newmain.c: 271:    ADCON0 |= 0b10000000;
+"291
+[; ;newmain.c: 291:    ADCON0 |= 0b10000000;
 [e =| _ADCON0 -> -> 128 `i `Vuc ]
-"274
-[; ;newmain.c: 274: }
-[e :UE 94 ]
+"294
+[; ;newmain.c: 294: }
+[e :UE 96 ]
 }
-"276
-[; ;newmain.c: 276: void ADC_ON(){
+"296
+[; ;newmain.c: 296: void ADC_ON(){
 [v _ADC_ON `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_ON ]
 [f ]
-"278
-[; ;newmain.c: 278:        ADCON0 |= 0b00000001;
+"298
+[; ;newmain.c: 298:        ADCON0 |= 0b00000001;
 [e =| _ADCON0 -> -> 1 `i `Vuc ]
-"279
-[; ;newmain.c: 279:        _delay((unsigned long)((20)*(4000000/4000.0)));
+"299
+[; ;newmain.c: 299:        _delay((unsigned long)((20)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"282
-[; ;newmain.c: 282: }
-[e :UE 95 ]
+"302
+[; ;newmain.c: 302: }
+[e :UE 97 ]
 }
-"285
-[; ;newmain.c: 285: void ADC_start_conversion(){
+"305
+[; ;newmain.c: 305: void ADC_start_conversion(){
 [v _ADC_start_conversion `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_start_conversion ]
 [f ]
-"288
-[; ;newmain.c: 288:     ADCON0 |= 0x4;
+"308
+[; ;newmain.c: 308:     ADCON0 |= 0x4;
 [e =| _ADCON0 -> -> 4 `i `Vuc ]
-"291
-[; ;newmain.c: 291: }
-[e :UE 96 ]
+"311
+[; ;newmain.c: 311: }
+[e :UE 98 ]
 }
-"294
-[; ;newmain.c: 294: void ADC_stop_conversion(){
+"314
+[; ;newmain.c: 314: void ADC_stop_conversion(){
 [v _ADC_stop_conversion `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_stop_conversion ]
 [f ]
-"296
-[; ;newmain.c: 296:     ADCON0 &= 0xfb;
+"316
+[; ;newmain.c: 316:     ADCON0 &= 0xfb;
 [e =& _ADCON0 -> -> 251 `i `Vuc ]
-"298
-[; ;newmain.c: 298: }
-[e :UE 97 ]
+"318
+[; ;newmain.c: 318: }
+[e :UE 99 ]
 }
-"301
-[; ;newmain.c: 301: unsigned int ADC_readValue(){
+"321
+[; ;newmain.c: 321: unsigned int ADC_readValue(){
 [v _ADC_readValue `(ui ~T0 @X0 1 ef ]
 {
 [e :U _ADC_readValue ]
 [f ]
-"302
-[; ;newmain.c: 302:     return ADRES;
+"322
+[; ;newmain.c: 322:     return ADRES;
 [e ) -> _ADRES `ui ]
-[e $UE 98  ]
-"303
-[; ;newmain.c: 303: }
-[e :UE 98 ]
+[e $UE 100  ]
+"323
+[; ;newmain.c: 323: }
+[e :UE 100 ]
 }
-"306
-[; ;newmain.c: 306: void leer_canales(){
+"326
+[; ;newmain.c: 326: void leer_canales(){
 [v _leer_canales `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer_canales ]
 [f ]
-"308
-[; ;newmain.c: 308:     unsigned short int canal = 0;
+"328
+[; ;newmain.c: 328:     unsigned short int canal = 0;
 [v _canal `us ~T0 @X0 1 a ]
 [e = _canal -> -> 0 `i `us ]
-"311
-[; ;newmain.c: 311:     while(canal < 5){
-[e $U 100  ]
-[e :U 101 ]
-{
-"312
-[; ;newmain.c: 312:     ADC_ON();
-[e ( _ADC_ON ..  ]
-"314
-[; ;newmain.c: 314:     ADC_selectorCanal(canal);
-[e ( _ADC_selectorCanal (1 _canal ]
-"316
-[; ;newmain.c: 316:       if((!(ADCON0 & 0b00000100))){
-[e $ ! ! != & -> _ADCON0 `i -> 4 `i -> 0 `i 103  ]
-{
-"317
-[; ;newmain.c: 317:           ADC_start_conversion();
-[e ( _ADC_start_conversion ..  ]
-"318
-[; ;newmain.c: 318:       }
-}
+"331
+[; ;newmain.c: 331:     while(canal < 5){
+[e $U 102  ]
 [e :U 103 ]
-"320
-[; ;newmain.c: 320:       while((!(!(ADCON0 & 0b00000100)))){
-[e $U 104  ]
-[e :U 105 ]
 {
-"321
-[; ;newmain.c: 321:             _delay((unsigned long)((20)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"323
-[; ;newmain.c: 323:       }
-}
-[e :U 104 ]
-"320
-[; ;newmain.c: 320:       while((!(!(ADCON0 & 0b00000100)))){
+"332
+[; ;newmain.c: 332:     ADC_ON();
+[e ( _ADC_ON ..  ]
+"334
+[; ;newmain.c: 334:     ADC_selectorCanal(canal);
+[e ( _ADC_selectorCanal (1 _canal ]
+"336
+[; ;newmain.c: 336:       if((!(ADCON0 & 0b00000100))){
 [e $ ! ! != & -> _ADCON0 `i -> 4 `i -> 0 `i 105  ]
-[e :U 106 ]
-"326
-[; ;newmain.c: 326:       lectura[canal] = ADC_readValue();
-[e = *U + &U _lectura * -> _canal `ux -> -> # *U &U _lectura `ui `ux -> ( _ADC_readValue ..  `us ]
-"327
-[; ;newmain.c: 327:       canal ++;
-[e ++ _canal -> -> 1 `i `us ]
-"328
-[; ;newmain.c: 328:       ADC_stop_conversion();
-[e ( _ADC_stop_conversion ..  ]
-"329
-[; ;newmain.c: 329:     }
+{
+"337
+[; ;newmain.c: 337:           ADC_start_conversion();
+[e ( _ADC_start_conversion ..  ]
+"338
+[; ;newmain.c: 338:       }
 }
-[e :U 100 ]
-"311
-[; ;newmain.c: 311:     while(canal < 5){
-[e $ < -> _canal `ui -> -> 5 `i `ui 101  ]
+[e :U 105 ]
+"340
+[; ;newmain.c: 340:       while((!(!(ADCON0 & 0b00000100)))){
+[e $U 106  ]
+[e :U 107 ]
+{
+"341
+[; ;newmain.c: 341:             _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"343
+[; ;newmain.c: 343:       }
+}
+[e :U 106 ]
+"340
+[; ;newmain.c: 340:       while((!(!(ADCON0 & 0b00000100)))){
+[e $ ! ! != & -> _ADCON0 `i -> 4 `i -> 0 `i 107  ]
+[e :U 108 ]
+"346
+[; ;newmain.c: 346:       lectura[canal] = ADC_readValue();
+[e = *U + &U _lectura * -> _canal `ux -> -> # *U &U _lectura `ui `ux -> ( _ADC_readValue ..  `us ]
+"347
+[; ;newmain.c: 347:       canal ++;
+[e ++ _canal -> -> 1 `i `us ]
+"348
+[; ;newmain.c: 348:       ADC_stop_conversion();
+[e ( _ADC_stop_conversion ..  ]
+"349
+[; ;newmain.c: 349:     }
+}
 [e :U 102 ]
 "331
-[; ;newmain.c: 331: }
-[e :UE 99 ]
+[; ;newmain.c: 331:     while(canal < 5){
+[e $ < -> _canal `ui -> -> 5 `i `ui 103  ]
+[e :U 104 ]
+"351
+[; ;newmain.c: 351: }
+[e :UE 101 ]
 }
-"333
-[; ;newmain.c: 333: void refrigeracion_de_grupo(){
+"353
+[; ;newmain.c: 353: void refrigeracion_de_grupo(){
 [v _refrigeracion_de_grupo `(v ~T0 @X0 1 ef ]
 {
 [e :U _refrigeracion_de_grupo ]
 [f ]
-"334
-[; ;newmain.c: 334:     unsigned short int contador = 0;
+"354
+[; ;newmain.c: 354:     unsigned short int contador = 0;
 [v _contador `us ~T0 @X0 1 a ]
 [e = _contador -> -> 0 `i `us ]
-"336
-[; ;newmain.c: 336:     while(contador < 60){
-[e $U 108  ]
-[e :U 109 ]
+"356
+[; ;newmain.c: 356:     while(contador < 60){
+[e $U 110  ]
+[e :U 111 ]
 {
-"337
-[; ;newmain.c: 337:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+"357
+[; ;newmain.c: 357:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"338
-[; ;newmain.c: 338:     contador++;
+"358
+[; ;newmain.c: 358:     contador++;
 [e ++ _contador -> -> 1 `i `us ]
-"339
-[; ;newmain.c: 339:     }
+"359
+[; ;newmain.c: 359:     }
 }
-[e :U 108 ]
-"336
-[; ;newmain.c: 336:     while(contador < 60){
-[e $ < -> _contador `ui -> -> 60 `i `ui 109  ]
 [e :U 110 ]
-"341
-[; ;newmain.c: 341: }
-[e :UE 107 ]
+"356
+[; ;newmain.c: 356:     while(contador < 60){
+[e $ < -> _contador `ui -> -> 60 `i `ui 111  ]
+[e :U 112 ]
+"361
+[; ;newmain.c: 361: }
+[e :UE 109 ]
 }
-"342
-[; ;newmain.c: 342: void desactivar_combustible(){
+"362
+[; ;newmain.c: 362: void desactivar_combustible(){
 [v _desactivar_combustible `(v ~T0 @X0 1 ef ]
 {
 [e :U _desactivar_combustible ]
 [f ]
-"343
-[; ;newmain.c: 343:     RC1 = 0;
+"363
+[; ;newmain.c: 363:     RC1 = 0;
 [e = _RC1 -> -> 0 `i `b ]
-"344
-[; ;newmain.c: 344:     _delay((unsigned long)((2000)*(4000000/4000.0)));
+"364
+[; ;newmain.c: 364:     _delay((unsigned long)((2000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"346
-[; ;newmain.c: 346: }
-[e :UE 111 ]
+"366
+[; ;newmain.c: 366: }
+[e :UE 113 ]
 }
-"348
-[; ;newmain.c: 348: void apagar_grupo(){
+"368
+[; ;newmain.c: 368: void apagar_grupo(){
 [v _apagar_grupo `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_grupo ]
 [f ]
-"350
-[; ;newmain.c: 350:     if(flag_hubo_falla == 0){
-[e $ ! == -> _flag_hubo_falla `ui -> -> 0 `i `ui 113  ]
+"370
+[; ;newmain.c: 370:     if(flag_hubo_falla == 0){
+[e $ ! == -> _flag_hubo_falla `ui -> -> 0 `i `ui 115  ]
 {
-"351
-[; ;newmain.c: 351:        RC1 = 0;
+"371
+[; ;newmain.c: 371:        RC1 = 0;
 [e = _RC1 -> -> 0 `i `b ]
-"352
-[; ;newmain.c: 352:        RC5 = 0;
+"372
+[; ;newmain.c: 372:        RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"353
-[; ;newmain.c: 353:        RB4 = 1;
+"373
+[; ;newmain.c: 373:        RB4 = 1;
 [e = _RB4 -> -> 1 `i `b ]
-"354
-[; ;newmain.c: 354:        encender_alarma();
+"374
+[; ;newmain.c: 374:        encender_alarma();
 [e ( _encender_alarma ..  ]
-"355
-[; ;newmain.c: 355:        flag_hubo_falla = 1;
+"375
+[; ;newmain.c: 375:        flag_hubo_falla = 1;
 [e = _flag_hubo_falla -> -> 1 `i `us ]
-"356
-[; ;newmain.c: 356:     }
+"376
+[; ;newmain.c: 376:     }
 }
-[e :U 113 ]
-"358
-[; ;newmain.c: 358: }
-[e :UE 112 ]
+[e :U 115 ]
+"378
+[; ;newmain.c: 378: }
+[e :UE 114 ]
 }
-"361
-[; ;newmain.c: 361: void titilar_led_manual(){
+"381
+[; ;newmain.c: 381: void titilar_led_manual(){
 [v _titilar_led_manual `(v ~T0 @X0 1 ef ]
 {
 [e :U _titilar_led_manual ]
 [f ]
-"364
-[; ;newmain.c: 364:         RC4 = 0;
+"384
+[; ;newmain.c: 384:         RC4 = 0;
 [e = _RC4 -> -> 0 `i `b ]
-"365
-[; ;newmain.c: 365:        _delay((unsigned long)((1000)*(4000000/4000.0)));
+"385
+[; ;newmain.c: 385:        _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"366
-[; ;newmain.c: 366:         RC4 = 1;
+"386
+[; ;newmain.c: 386:         RC4 = 1;
 [e = _RC4 -> -> 1 `i `b ]
-"369
-[; ;newmain.c: 369: }
-[e :UE 114 ]
+"389
+[; ;newmain.c: 389: }
+[e :UE 116 ]
 }
-"371
-[; ;newmain.c: 371: void activar_uso_de_red(){
+"391
+[; ;newmain.c: 391: void activar_uso_de_red(){
 [v _activar_uso_de_red `(v ~T0 @X0 1 ef ]
 {
 [e :U _activar_uso_de_red ]
 [f ]
-"372
-[; ;newmain.c: 372:     RC6 = 0;
+"392
+[; ;newmain.c: 392:     RC6 = 0;
 [e = _RC6 -> -> 0 `i `b ]
-"373
-[; ;newmain.c: 373: }
-[e :UE 115 ]
+"393
+[; ;newmain.c: 393: }
+[e :UE 117 ]
 }
-"378
-[; ;newmain.c: 378: void desactivar_uso_de_red(){
+"398
+[; ;newmain.c: 398: void desactivar_uso_de_red(){
 [v _desactivar_uso_de_red `(v ~T0 @X0 1 ef ]
 {
 [e :U _desactivar_uso_de_red ]
 [f ]
-"379
-[; ;newmain.c: 379:     RC6 = 1;
+"399
+[; ;newmain.c: 399:     RC6 = 1;
 [e = _RC6 -> -> 1 `i `b ]
-"380
-[; ;newmain.c: 380: }
-[e :UE 116 ]
+"400
+[; ;newmain.c: 400: }
+[e :UE 118 ]
 }
-"383
-[; ;newmain.c: 383: void encender_led_red_disponible(){
+"403
+[; ;newmain.c: 403: void encender_led_red_disponible(){
 [v _encender_led_red_disponible `(v ~T0 @X0 1 ef ]
 {
 [e :U _encender_led_red_disponible ]
 [f ]
-"385
-[; ;newmain.c: 385:     RB5 = 0;
+"405
+[; ;newmain.c: 405:     RB5 = 0;
 [e = _RB5 -> -> 0 `i `b ]
-"387
-[; ;newmain.c: 387: }
-[e :UE 117 ]
+"407
+[; ;newmain.c: 407: }
+[e :UE 119 ]
 }
-"389
-[; ;newmain.c: 389: void apagar_led_red_disponible(){
+"409
+[; ;newmain.c: 409: void apagar_led_red_disponible(){
 [v _apagar_led_red_disponible `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_led_red_disponible ]
 [f ]
-"392
-[; ;newmain.c: 392:         RB5 = 1;
+"412
+[; ;newmain.c: 412:         RB5 = 1;
 [e = _RB5 -> -> 1 `i `b ]
-"394
-[; ;newmain.c: 394: }
-[e :UE 118 ]
+"414
+[; ;newmain.c: 414: }
+[e :UE 120 ]
 }
-"396
-[; ;newmain.c: 396: void encender_alarma(){
+"416
+[; ;newmain.c: 416: void encender_alarma(){
 [v _encender_alarma `(v ~T0 @X0 1 ef ]
 {
 [e :U _encender_alarma ]
 [f ]
-"400
-[; ;newmain.c: 400:         RC2 = 1;
+"420
+[; ;newmain.c: 420:         RC2 = 1;
 [e = _RC2 -> -> 1 `i `b ]
-"403
-[; ;newmain.c: 403: }
-[e :UE 119 ]
+"423
+[; ;newmain.c: 423: }
+[e :UE 121 ]
 }
-"407
-[; ;newmain.c: 407: void activarPrecalentamiento(){
+"427
+[; ;newmain.c: 427: void activarPrecalentamiento(){
 [v _activarPrecalentamiento `(v ~T0 @X0 1 ef ]
 {
 [e :U _activarPrecalentamiento ]
 [f ]
-"412
-[; ;newmain.c: 412:     RC7 = 1;
+"432
+[; ;newmain.c: 432:     RC7 = 1;
 [e = _RC7 -> -> 1 `i `b ]
-"413
-[; ;newmain.c: 413:     _delay((unsigned long)((2000)*(4000000/4000.0)));
+"433
+[; ;newmain.c: 433:     _delay((unsigned long)((2000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"414
-[; ;newmain.c: 414:     RC7 = 0;
+"434
+[; ;newmain.c: 434:     RC7 = 0;
 [e = _RC7 -> -> 0 `i `b ]
-"417
-[; ;newmain.c: 417: }
-[e :UE 120 ]
+"437
+[; ;newmain.c: 437: }
+[e :UE 122 ]
 }
-"420
-[; ;newmain.c: 420: void activarArranque(){
+"440
+[; ;newmain.c: 440: void activarArranque(){
 [v _activarArranque `(v ~T0 @X0 1 ef ]
 {
 [e :U _activarArranque ]
 [f ]
-"426
-[; ;newmain.c: 426:     RB6 = 1;
+"446
+[; ;newmain.c: 446:     RB6 = 1;
 [e = _RB6 -> -> 1 `i `b ]
-"427
-[; ;newmain.c: 427:     _delay((unsigned long)((5000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"428
-[; ;newmain.c: 428:     RB6 = 0;
+"447
+[; ;newmain.c: 447:     _delay((unsigned long)((8000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 8000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"448
+[; ;newmain.c: 448:     RB6 = 0;
 [e = _RB6 -> -> 0 `i `b ]
-"431
-[; ;newmain.c: 431: }
-[e :UE 121 ]
+"451
+[; ;newmain.c: 451: }
+[e :UE 123 ]
 }
-"433
-[; ;newmain.c: 433: void apagar_led_uso_linea(){
+"453
+[; ;newmain.c: 453: void apagar_led_uso_linea(){
 [v _apagar_led_uso_linea `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_led_uso_linea ]
 [f ]
-"434
-[; ;newmain.c: 434:     RC6 = 0;
+"454
+[; ;newmain.c: 454:     RC6 = 0;
 [e = _RC6 -> -> 0 `i `b ]
-"435
-[; ;newmain.c: 435: }
-[e :UE 122 ]
+"455
+[; ;newmain.c: 455: }
+[e :UE 124 ]
 }
-"436
-[; ;newmain.c: 436: void prender_led_uso_grupo(){
+"456
+[; ;newmain.c: 456: void prender_led_uso_grupo(){
 [v _prender_led_uso_grupo `(v ~T0 @X0 1 ef ]
 {
 [e :U _prender_led_uso_grupo ]
 [f ]
-"437
-[; ;newmain.c: 437:     RC5 = 1;
+"457
+[; ;newmain.c: 457:     RC5 = 1;
 [e = _RC5 -> -> 1 `i `b ]
-"438
-[; ;newmain.c: 438: }
-[e :UE 123 ]
+"458
+[; ;newmain.c: 458: }
+[e :UE 125 ]
 }
-"441
-[; ;newmain.c: 441: void activarCombustible(){
+"461
+[; ;newmain.c: 461: void activarCombustible(){
 [v _activarCombustible `(v ~T0 @X0 1 ef ]
 {
 [e :U _activarCombustible ]
 [f ]
-"446
-[; ;newmain.c: 446:     RC1 = 1;
+"466
+[; ;newmain.c: 466:     RC1 = 1;
 [e = _RC1 -> -> 1 `i `b ]
-"447
-[; ;newmain.c: 447:     _delay((unsigned long)((2000)*(4000000/4000.0)));
+"467
+[; ;newmain.c: 467:     _delay((unsigned long)((2000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"450
-[; ;newmain.c: 450: }
-[e :UE 124 ]
+"470
+[; ;newmain.c: 470: }
+[e :UE 126 ]
 }
-"452
-[; ;newmain.c: 452: void encenderTransferencia(){
+"472
+[; ;newmain.c: 472: void encenderTransferencia(){
 [v _encenderTransferencia `(v ~T0 @X0 1 ef ]
 {
 [e :U _encenderTransferencia ]
 [f ]
-"453
-[; ;newmain.c: 453:     unsigned short int counter = 0;
+"473
+[; ;newmain.c: 473:     unsigned short int counter = 0;
 [v _counter `us ~T0 @X0 1 a ]
 [e = _counter -> -> 0 `i `us ]
-"454
-[; ;newmain.c: 454:     while(counter < 10){
-[e $U 126  ]
-[e :U 127 ]
+"474
+[; ;newmain.c: 474:     while(counter < 10){
+[e $U 128  ]
+[e :U 129 ]
 {
-"456
-[; ;newmain.c: 456:     RB3 = 0;
+"476
+[; ;newmain.c: 476:     RB3 = 0;
 [e = _RB3 -> -> 0 `i `b ]
-"457
-[; ;newmain.c: 457:     _delay((unsigned long)((300)*(4000000/4000.0)));
+"477
+[; ;newmain.c: 477:     _delay((unsigned long)((300)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"458
-[; ;newmain.c: 458:     RB3 = 1;
+"478
+[; ;newmain.c: 478:     RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"459
-[; ;newmain.c: 459:     counter = counter + 1;
+"479
+[; ;newmain.c: 479:     counter = counter + 1;
 [e = _counter -> + -> _counter `ui -> -> 1 `i `ui `us ]
-"460
-[; ;newmain.c: 460:     }
+"480
+[; ;newmain.c: 480:     }
 }
-[e :U 126 ]
-"454
-[; ;newmain.c: 454:     while(counter < 10){
-[e $ < -> _counter `ui -> -> 10 `i `ui 127  ]
 [e :U 128 ]
-"461
-[; ;newmain.c: 461: }
-[e :UE 125 ]
+"474
+[; ;newmain.c: 474:     while(counter < 10){
+[e $ < -> _counter `ui -> -> 10 `i `ui 129  ]
+[e :U 130 ]
+"481
+[; ;newmain.c: 481: }
+[e :UE 127 ]
 }
-"465
-[; ;newmain.c: 465: void apagar_grupo_disponible(){
+"485
+[; ;newmain.c: 485: void apagar_grupo_disponible(){
 [v _apagar_grupo_disponible `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_grupo_disponible ]
 [f ]
-"466
-[; ;newmain.c: 466:     RB4 = 1;
+"486
+[; ;newmain.c: 486:     RB4 = 1;
 [e = _RB4 -> -> 1 `i `b ]
-"467
-[; ;newmain.c: 467:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+"487
+[; ;newmain.c: 487:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"468
-[; ;newmain.c: 468: }
-[e :UE 129 ]
+"488
+[; ;newmain.c: 488: }
+[e :UE 131 ]
 }
-"470
-[; ;newmain.c: 470: void grupo_disponible(){
+"490
+[; ;newmain.c: 490: void grupo_disponible(){
 [v _grupo_disponible `(v ~T0 @X0 1 ef ]
 {
 [e :U _grupo_disponible ]
 [f ]
-"471
-[; ;newmain.c: 471:     RB4 = 0;
+"491
+[; ;newmain.c: 491:     RB4 = 0;
 [e = _RB4 -> -> 0 `i `b ]
-"472
-[; ;newmain.c: 472:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+"492
+[; ;newmain.c: 492:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"473
-[; ;newmain.c: 473: }
-[e :UE 130 ]
+"493
+[; ;newmain.c: 493: }
+[e :UE 132 ]
 }
-"474
-[; ;newmain.c: 474: void grupo_en_uso(){
+"494
+[; ;newmain.c: 494: void grupo_en_uso(){
 [v _grupo_en_uso `(v ~T0 @X0 1 ef ]
 {
 [e :U _grupo_en_uso ]
 [f ]
-"475
-[; ;newmain.c: 475:     RC5 = 1;
+"495
+[; ;newmain.c: 495:     RC5 = 1;
 [e = _RC5 -> -> 1 `i `b ]
-"476
-[; ;newmain.c: 476:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+"496
+[; ;newmain.c: 496:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"477
-[; ;newmain.c: 477: }
-[e :UE 131 ]
+"497
+[; ;newmain.c: 497: }
+[e :UE 133 ]
 }
-"479
-[; ;newmain.c: 479: void apagar_grupo_en_uso(){
+"499
+[; ;newmain.c: 499: void apagar_grupo_en_uso(){
 [v _apagar_grupo_en_uso `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_grupo_en_uso ]
 [f ]
-"480
-[; ;newmain.c: 480:     RC5 = 0;
+"500
+[; ;newmain.c: 500:     RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"481
-[; ;newmain.c: 481:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+"501
+[; ;newmain.c: 501:     _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"482
-[; ;newmain.c: 482: }
-[e :UE 132 ]
+"502
+[; ;newmain.c: 502: }
+[e :UE 134 ]
 }
-"484
-[; ;newmain.c: 484: void funcion_minima(){
+"504
+[; ;newmain.c: 504: void funcion_minima(){
 [v _funcion_minima `(v ~T0 @X0 1 ef ]
 {
 [e :U _funcion_minima ]
 [f ]
-"486
-[; ;newmain.c: 486:     RB3 = 0;
+"506
+[; ;newmain.c: 506:     RB3 = 0;
 [e = _RB3 -> -> 0 `i `b ]
-"487
-[; ;newmain.c: 487:     _delay((unsigned long)((15000)*(4000000/4000.0)));
+"507
+[; ;newmain.c: 507:     _delay((unsigned long)((15000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 15000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"488
-[; ;newmain.c: 488:     RB3 = 1;
+"508
+[; ;newmain.c: 508:     RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"490
-[; ;newmain.c: 490: }
-[e :UE 133 ]
+"510
+[; ;newmain.c: 510: }
+[e :UE 135 ]
 }
-"492
-[; ;newmain.c: 492: void apagar_funcion_minima(){
+"512
+[; ;newmain.c: 512: void apagar_funcion_minima(){
 [v _apagar_funcion_minima `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagar_funcion_minima ]
 [f ]
-"493
-[; ;newmain.c: 493:     RB3 = 1;
+"513
+[; ;newmain.c: 513:     RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"494
-[; ;newmain.c: 494: }
-[e :UE 134 ]
+"514
+[; ;newmain.c: 514: }
+[e :UE 136 ]
 }
-"496
-[; ;newmain.c: 496: void apagarMotor(){
+"516
+[; ;newmain.c: 516: void apagarMotor(){
 [v _apagarMotor `(v ~T0 @X0 1 ef ]
 {
 [e :U _apagarMotor ]
 [f ]
-"501
-[; ;newmain.c: 501:     RC2 = 1;
+"521
+[; ;newmain.c: 521:     RC2 = 1;
 [e = _RC2 -> -> 1 `i `b ]
-"503
-[; ;newmain.c: 503: }
-[e :UE 135 ]
+"523
+[; ;newmain.c: 523: }
+[e :UE 137 ]
 }
-"506
-[; ;newmain.c: 506: void leerPulsadores(){
+"526
+[; ;newmain.c: 526: void leerPulsadores(){
 [v _leerPulsadores `(v ~T0 @X0 1 ef ]
 {
 [e :U _leerPulsadores ]
 [f ]
-"511
-[; ;newmain.c: 511:     if(lectura[INDICE_PULSADORES] < 15){
-[e $ ! < -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 15 `i `ui 137  ]
+"531
+[; ;newmain.c: 531:     if(lectura[INDICE_PULSADORES] < 15){
+[e $ ! < -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 15 `i `ui 139  ]
 {
-"512
-[; ;newmain.c: 512:          estado.pulsadores = PULSAD_ON;
-[e = . _estado 1 -> . `E716 1 `us ]
-"513
-[; ;newmain.c: 513:     }
-}
-[e :U 137 ]
-"514
-[; ;newmain.c: 514:     if(lectura[INDICE_PULSADORES] >= 15 && lectura[INDICE_PULSADORES] < 50 ){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 15 `i `ui < -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui 138  ]
-{
-"515
-[; ;newmain.c: 515:         estado.pulsadores = PULSAD_OFF;
-[e = . _estado 1 -> . `E716 2 `us ]
-"516
-[; ;newmain.c: 516:     }
-}
-[e :U 138 ]
-"518
-[; ;newmain.c: 518:     if(lectura[INDICE_PULSADORES] >= 50 && lectura[INDICE_PULSADORES] < 100 ){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui < -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui 139  ]
-{
-"519
-[; ;newmain.c: 519:         estado.pulsadores = PULSAD_MANUAL;
-[e = . _estado 1 -> . `E716 3 `us ]
-"520
-[; ;newmain.c: 520:     }
+"532
+[; ;newmain.c: 532:          estado.pulsadores = PULSAD_ON;
+[e = . _estado 1 -> . `E720 1 `us ]
+"533
+[; ;newmain.c: 533:     }
 }
 [e :U 139 ]
-"521
-[; ;newmain.c: 521:     if(lectura[INDICE_PULSADORES] >= 100 && lectura[INDICE_PULSADORES] < 150){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui < -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 150 `i `ui 140  ]
+"534
+[; ;newmain.c: 534:     if(lectura[INDICE_PULSADORES] >= 15 && lectura[INDICE_PULSADORES] < 50 ){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 15 `i `ui < -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui 140  ]
 {
-"522
-[; ;newmain.c: 522:         estado.pulsadores = PULSAD_AUTO;
-[e = . _estado 1 -> . `E716 4 `us ]
-"523
-[; ;newmain.c: 523:     }
+"535
+[; ;newmain.c: 535:         estado.pulsadores = PULSAD_OFF;
+[e = . _estado 1 -> . `E720 2 `us ]
+"536
+[; ;newmain.c: 536:     }
 }
 [e :U 140 ]
-"524
-[; ;newmain.c: 524:     if(lectura[INDICE_PULSADORES] >= 150){
-[e $ ! >= -> *U + &U _lectura * -> . `E698 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 150 `i `ui 141  ]
+"538
+[; ;newmain.c: 538:     if(lectura[INDICE_PULSADORES] >= 50 && lectura[INDICE_PULSADORES] < 100 ){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui < -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui 141  ]
 {
-"525
-[; ;newmain.c: 525:         estado.pulsadores = PULSAD_NADA;
-[e = . _estado 1 -> . `E716 0 `us ]
-"526
-[; ;newmain.c: 526:     }
+"539
+[; ;newmain.c: 539:         estado.pulsadores = PULSAD_MANUAL;
+[e = . _estado 1 -> . `E720 3 `us ]
+"540
+[; ;newmain.c: 540:     }
 }
 [e :U 141 ]
-"530
-[; ;newmain.c: 530: }
-[e :UE 136 ]
+"541
+[; ;newmain.c: 541:     if(lectura[INDICE_PULSADORES] >= 100 && lectura[INDICE_PULSADORES] < 150){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui < -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 150 `i `ui 142  ]
+{
+"542
+[; ;newmain.c: 542:         estado.pulsadores = PULSAD_AUTO;
+[e = . _estado 1 -> . `E720 4 `us ]
+"543
+[; ;newmain.c: 543:     }
 }
-"532
-[; ;newmain.c: 532: void accionesPulsadores(){
+[e :U 142 ]
+"544
+[; ;newmain.c: 544:     if(lectura[INDICE_PULSADORES] >= 150){
+[e $ ! >= -> *U + &U _lectura * -> . `E702 0 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 150 `i `ui 143  ]
+{
+"545
+[; ;newmain.c: 545:         estado.pulsadores = PULSAD_NADA;
+[e = . _estado 1 -> . `E720 0 `us ]
+"546
+[; ;newmain.c: 546:     }
+}
+[e :U 143 ]
+"550
+[; ;newmain.c: 550: }
+[e :UE 138 ]
+}
+"552
+[; ;newmain.c: 552: void accionesPulsadores(){
 [v _accionesPulsadores `(v ~T0 @X0 1 ef ]
 {
 [e :U _accionesPulsadores ]
 [f ]
-"534
-[; ;newmain.c: 534:     switch (estado.pulsadores){
-[e $U 144  ]
-{
-"536
-[; ;newmain.c: 536:         case PULSAD_NADA:
-[e :U 145 ]
-"539
-[; ;newmain.c: 539:             break;
-[e $U 143  ]
-"540
-[; ;newmain.c: 540:         case PULSAD_ON:
-[e :U 146 ]
-"542
-[; ;newmain.c: 542:             break;
-[e $U 143  ]
-"543
-[; ;newmain.c: 543:         case PULSAD_OFF:
-[e :U 147 ]
-"545
-[; ;newmain.c: 545:             break;
-[e $U 143  ]
-"546
-[; ;newmain.c: 546:         case PULSAD_MANUAL:
-[e :U 148 ]
-"547
-[; ;newmain.c: 547:             configuracion_inicial();
-[e ( _configuracion_inicial ..  ]
-"548
-[; ;newmain.c: 548:             _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"549
-[; ;newmain.c: 549:             break;
-[e $U 143  ]
-"550
-[; ;newmain.c: 550:         case PULSAD_AUTO:
-[e :U 149 ]
-"552
-[; ;newmain.c: 552:             break;
-[e $U 143  ]
-"553
-[; ;newmain.c: 553:         default:
-[e :U 150 ]
 "554
-[; ;newmain.c: 554:             break;
-[e $U 143  ]
+[; ;newmain.c: 554:     switch (estado.pulsadores){
+[e $U 146  ]
+{
 "556
-[; ;newmain.c: 556:     }
+[; ;newmain.c: 556:         case PULSAD_NADA:
+[e :U 147 ]
+"559
+[; ;newmain.c: 559:             break;
+[e $U 145  ]
+"560
+[; ;newmain.c: 560:         case PULSAD_ON:
+[e :U 148 ]
+"562
+[; ;newmain.c: 562:             break;
+[e $U 145  ]
+"563
+[; ;newmain.c: 563:         case PULSAD_OFF:
+[e :U 149 ]
+"565
+[; ;newmain.c: 565:             break;
+[e $U 145  ]
+"566
+[; ;newmain.c: 566:         case PULSAD_MANUAL:
+[e :U 150 ]
+"567
+[; ;newmain.c: 567:             configuracion_inicial();
+[e ( _configuracion_inicial ..  ]
+"568
+[; ;newmain.c: 568:             _delay((unsigned long)((100)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"569
+[; ;newmain.c: 569:             break;
+[e $U 145  ]
+"570
+[; ;newmain.c: 570:         case PULSAD_AUTO:
+[e :U 151 ]
+"572
+[; ;newmain.c: 572:             break;
+[e $U 145  ]
+"573
+[; ;newmain.c: 573:         default:
+[e :U 152 ]
+"574
+[; ;newmain.c: 574:             break;
+[e $U 145  ]
+"576
+[; ;newmain.c: 576:     }
 }
-[e $U 143  ]
-[e :U 144 ]
-[e [\ -> . _estado 1 `ui , $ -> . `E716 0 `ui 145
- , $ -> . `E716 1 `ui 146
- , $ -> . `E716 2 `ui 147
- , $ -> . `E716 3 `ui 148
- , $ -> . `E716 4 `ui 149
- 150 ]
-[e :U 143 ]
-"558
-[; ;newmain.c: 558: }
-[e :UE 142 ]
+[e $U 145  ]
+[e :U 146 ]
+[e [\ -> . _estado 1 `ui , $ -> . `E720 0 `ui 147
+ , $ -> . `E720 1 `ui 148
+ , $ -> . `E720 2 `ui 149
+ , $ -> . `E720 3 `ui 150
+ , $ -> . `E720 4 `ui 151
+ 152 ]
+[e :U 145 ]
+"578
+[; ;newmain.c: 578: }
+[e :UE 144 ]
 }
-"561
-[; ;newmain.c: 561: void leer_combustible_onoff_cargaBat(){
+"581
+[; ;newmain.c: 581: void leer_combustible_onoff_cargaBat(){
 [v _leer_combustible_onoff_cargaBat `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer_combustible_onoff_cargaBat ]
 [f ]
-"566
-[; ;newmain.c: 566:     if(lectura[INDICE_COMBUSTIBLE] >= 240){
-[e $ ! >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 240 `i `ui 152  ]
+"586
+[; ;newmain.c: 586:     if(lectura[INDICE_COMBUSTIBLE] >= 240){
+[e $ ! >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 240 `i `ui 154  ]
 {
-"567
-[; ;newmain.c: 567:         estado.combustibles = 0;
+"587
+[; ;newmain.c: 587:         estado.combustibles = 0;
 [e = . _estado 2 -> -> 0 `i `us ]
-"569
-[; ;newmain.c: 569:     }
-}
-[e :U 152 ]
-"570
-[; ;newmain.c: 570:     if(lectura[INDICE_COMBUSTIBLE] >= 200 && lectura[INDICE_COMBUSTIBLE] < 240 ){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 200 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 240 `i `ui 153  ]
-{
-"575
-[; ;newmain.c: 575:         estado.combustibles = 1;
-[e = . _estado 2 -> -> 1 `i `us ]
-"576
-[; ;newmain.c: 576:     }
-}
-[e :U 153 ]
-"578
-[; ;newmain.c: 578:     if(lectura[INDICE_COMBUSTIBLE] >= 160 && lectura[INDICE_COMBUSTIBLE] < 200){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 160 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 200 `i `ui 154  ]
-{
-"583
-[; ;newmain.c: 583:         estado.combustibles = 2;
-[e = . _estado 2 -> -> 2 `i `us ]
-"584
-[; ;newmain.c: 584:     }
+"589
+[; ;newmain.c: 589:     }
 }
 [e :U 154 ]
-"585
-[; ;newmain.c: 585:     if(lectura[INDICE_COMBUSTIBLE] >= 140 && lectura[INDICE_COMBUSTIBLE] < 160){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 140 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 160 `i `ui 155  ]
-{
 "590
-[; ;newmain.c: 590:         estado.combustibles = 3;
-[e = . _estado 2 -> -> 3 `i `us ]
-"591
-[; ;newmain.c: 591:     }
+[; ;newmain.c: 590:     if(lectura[INDICE_COMBUSTIBLE] >= 200 && lectura[INDICE_COMBUSTIBLE] < 240 ){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 200 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 240 `i `ui 155  ]
+{
+"595
+[; ;newmain.c: 595:         estado.combustibles = 1;
+[e = . _estado 2 -> -> 1 `i `us ]
+"596
+[; ;newmain.c: 596:     }
 }
 [e :U 155 ]
-"592
-[; ;newmain.c: 592:     if(lectura[INDICE_COMBUSTIBLE] >= 120 && lectura[INDICE_COMBUSTIBLE] < 140){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 120 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 140 `i `ui 156  ]
-{
 "598
-[; ;newmain.c: 598:         estado.combustibles = 4;
-[e = . _estado 2 -> -> 4 `i `us ]
-"599
-[; ;newmain.c: 599:     }
+[; ;newmain.c: 598:     if(lectura[INDICE_COMBUSTIBLE] >= 160 && lectura[INDICE_COMBUSTIBLE] < 200){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 160 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 200 `i `ui 156  ]
+{
+"603
+[; ;newmain.c: 603:         estado.combustibles = 2;
+[e = . _estado 2 -> -> 2 `i `us ]
+"604
+[; ;newmain.c: 604:     }
 }
 [e :U 156 ]
-"600
-[; ;newmain.c: 600:     if(lectura[INDICE_COMBUSTIBLE] >= 107 && lectura[INDICE_COMBUSTIBLE] < 120){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 107 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 120 `i `ui 157  ]
-{
 "605
-[; ;newmain.c: 605:         estado.combustibles = 5;
-[e = . _estado 2 -> -> 5 `i `us ]
-"606
-[; ;newmain.c: 606:     }
+[; ;newmain.c: 605:     if(lectura[INDICE_COMBUSTIBLE] >= 140 && lectura[INDICE_COMBUSTIBLE] < 160){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 140 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 160 `i `ui 157  ]
+{
+"610
+[; ;newmain.c: 610:         estado.combustibles = 3;
+[e = . _estado 2 -> -> 3 `i `us ]
+"611
+[; ;newmain.c: 611:     }
 }
 [e :U 157 ]
-"607
-[; ;newmain.c: 607:     if(lectura[INDICE_COMBUSTIBLE] >= 100 && lectura[INDICE_COMBUSTIBLE] < 107){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 107 `i `ui 158  ]
-{
 "612
-[; ;newmain.c: 612:         estado.combustibles = 6;
-[e = . _estado 2 -> -> 6 `i `us ]
-"613
-[; ;newmain.c: 613:     }
+[; ;newmain.c: 612:     if(lectura[INDICE_COMBUSTIBLE] >= 120 && lectura[INDICE_COMBUSTIBLE] < 140){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 120 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 140 `i `ui 158  ]
+{
+"618
+[; ;newmain.c: 618:         estado.combustibles = 4;
+[e = . _estado 2 -> -> 4 `i `us ]
+"619
+[; ;newmain.c: 619:     }
 }
 [e :U 158 ]
-"614
-[; ;newmain.c: 614:     if(lectura[INDICE_COMBUSTIBLE] < 100){
-[e $ ! < -> *U + &U _lectura * -> . `E698 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui 159  ]
+"620
+[; ;newmain.c: 620:     if(lectura[INDICE_COMBUSTIBLE] >= 107 && lectura[INDICE_COMBUSTIBLE] < 120){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 107 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 120 `i `ui 159  ]
 {
-"619
-[; ;newmain.c: 619:         estado.combustibles = 7;
-[e = . _estado 2 -> -> 7 `i `us ]
-"621
-[; ;newmain.c: 621:     }
+"625
+[; ;newmain.c: 625:         estado.combustibles = 5;
+[e = . _estado 2 -> -> 5 `i `us ]
+"626
+[; ;newmain.c: 626:     }
 }
 [e :U 159 ]
-"625
-[; ;newmain.c: 625: }
-[e :UE 151 ]
+"627
+[; ;newmain.c: 627:     if(lectura[INDICE_COMBUSTIBLE] >= 100 && lectura[INDICE_COMBUSTIBLE] < 107){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 107 `i `ui 160  ]
+{
+"632
+[; ;newmain.c: 632:         estado.combustibles = 6;
+[e = . _estado 2 -> -> 6 `i `us ]
+"633
+[; ;newmain.c: 633:     }
 }
-"626
-[; ;newmain.c: 626: void accionar_combustible_onoff_cargaBat(){
+[e :U 160 ]
+"634
+[; ;newmain.c: 634:     if(lectura[INDICE_COMBUSTIBLE] < 100){
+[e $ ! < -> *U + &U _lectura * -> . `E702 1 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 100 `i `ui 161  ]
+{
+"639
+[; ;newmain.c: 639:         estado.combustibles = 7;
+[e = . _estado 2 -> -> 7 `i `us ]
+"641
+[; ;newmain.c: 641:     }
+}
+[e :U 161 ]
+"645
+[; ;newmain.c: 645: }
+[e :UE 153 ]
+}
+"646
+[; ;newmain.c: 646: void accionar_combustible_onoff_cargaBat(){
 [v _accionar_combustible_onoff_cargaBat `(v ~T0 @X0 1 ef ]
 {
 [e :U _accionar_combustible_onoff_cargaBat ]
 [f ]
-"631
-[; ;newmain.c: 631:     switch(estado.combustibles){
-[e $U 162  ]
+"651
+[; ;newmain.c: 651:     switch(estado.combustibles){
+[e $U 164  ]
 {
-"632
-[; ;newmain.c: 632:         case 0:
-[e :U 163 ]
-"639
-[; ;newmain.c: 639:         RB0 = 0;
+"652
+[; ;newmain.c: 652:         case 0:
+[e :U 165 ]
+"659
+[; ;newmain.c: 659:         RB0 = 0;
 [e = _RB0 -> -> 0 `i `b ]
-"640
-[; ;newmain.c: 640:         RB1 = 1;
+"660
+[; ;newmain.c: 660:         RB1 = 1;
 [e = _RB1 -> -> 1 `i `b ]
-"641
-[; ;newmain.c: 641:         RB2 = 1;
+"661
+[; ;newmain.c: 661:         RB2 = 1;
 [e = _RB2 -> -> 1 `i `b ]
-"642
-[; ;newmain.c: 642:         RB3 = 1;
+"662
+[; ;newmain.c: 662:         RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"643
-[; ;newmain.c: 643:         RB4 = 1;
+"663
+[; ;newmain.c: 663:         RB4 = 1;estado.tension_linea = GRUPO_EN_USO;
 [e = _RB4 -> -> 1 `i `b ]
-"644
-[; ;newmain.c: 644:         RB5 = 1;
+[e = . _estado 3 -> . `E736 2 `us ]
+"664
+[; ;newmain.c: 664:         RB5 = 1;
 [e = _RB5 -> -> 1 `i `b ]
-"645
-[; ;newmain.c: 645:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"646
-[; ;newmain.c: 646:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"655
-[; ;newmain.c: 655:         break;
-[e $U 161  ]
-"658
-[; ;newmain.c: 658:         case 1:
-[e :U 164 ]
 "665
-[; ;newmain.c: 665:         RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"666
-[; ;newmain.c: 666:         RB1 = 0;
-[e = _RB1 -> -> 0 `i `b ]
-"667
-[; ;newmain.c: 667:         RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"668
-[; ;newmain.c: 668:         RB3 = 1;
-[e = _RB3 -> -> 1 `i `b ]
-"669
-[; ;newmain.c: 669:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"670
-[; ;newmain.c: 670:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
-"671
-[; ;newmain.c: 671:         RC0 = 1;
+[; ;newmain.c: 665:         RC0 = 1;
 [e = _RC0 -> -> 1 `i `b ]
-"672
-[; ;newmain.c: 672:         RC3 = 1;
+"666
+[; ;newmain.c: 666:         RC3 = 1;
 [e = _RC3 -> -> 1 `i `b ]
 "675
 [; ;newmain.c: 675:         break;
-[e $U 161  ]
+[e $U 163  ]
 "678
-[; ;newmain.c: 678:         case 2:
-[e :U 165 ]
-"683
-[; ;newmain.c: 683:         RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"684
-[; ;newmain.c: 684:         RB1 = 1;
-[e = _RB1 -> -> 1 `i `b ]
-"685
-[; ;newmain.c: 685:         RB2 = 0;
-[e = _RB2 -> -> 0 `i `b ]
-"686
-[; ;newmain.c: 686:         RB3 = 1;
-[e = _RB3 -> -> 1 `i `b ]
-"687
-[; ;newmain.c: 687:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"688
-[; ;newmain.c: 688:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
-"689
-[; ;newmain.c: 689:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"690
-[; ;newmain.c: 690:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"691
-[; ;newmain.c: 691:         break;
-[e $U 161  ]
-"693
-[; ;newmain.c: 693:         case 3:
+[; ;newmain.c: 678:         case 1:
 [e :U 166 ]
+"685
+[; ;newmain.c: 685:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"686
+[; ;newmain.c: 686:         RB1 = 0;
+[e = _RB1 -> -> 0 `i `b ]
+"687
+[; ;newmain.c: 687:         RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"688
+[; ;newmain.c: 688:         RB3 = 1;
+[e = _RB3 -> -> 1 `i `b ]
+"689
+[; ;newmain.c: 689:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"690
+[; ;newmain.c: 690:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
+"691
+[; ;newmain.c: 691:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"692
+[; ;newmain.c: 692:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"695
+[; ;newmain.c: 695:         break;
+[e $U 163  ]
 "698
-[; ;newmain.c: 698:             RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"699
-[; ;newmain.c: 699:         RB1 = 1;
-[e = _RB1 -> -> 1 `i `b ]
-"700
-[; ;newmain.c: 700:         RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"701
-[; ;newmain.c: 701:         RB3 = 0;
-[e = _RB3 -> -> 0 `i `b ]
-"702
-[; ;newmain.c: 702:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"703
-[; ;newmain.c: 703:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
-"704
-[; ;newmain.c: 704:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"705
-[; ;newmain.c: 705:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"706
-[; ;newmain.c: 706:             break;
-[e $U 161  ]
-"708
-[; ;newmain.c: 708:         case 4:
+[; ;newmain.c: 698:         case 2:
 [e :U 167 ]
+"703
+[; ;newmain.c: 703:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"704
+[; ;newmain.c: 704:         RB1 = 1;
+[e = _RB1 -> -> 1 `i `b ]
+"705
+[; ;newmain.c: 705:         RB2 = 0;
+[e = _RB2 -> -> 0 `i `b ]
+"706
+[; ;newmain.c: 706:         RB3 = 1;
+[e = _RB3 -> -> 1 `i `b ]
+"707
+[; ;newmain.c: 707:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"708
+[; ;newmain.c: 708:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
+"709
+[; ;newmain.c: 709:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"710
+[; ;newmain.c: 710:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"711
+[; ;newmain.c: 711:         break;
+[e $U 163  ]
 "713
-[; ;newmain.c: 713:         RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"714
-[; ;newmain.c: 714:         RB1 = 1;
-[e = _RB1 -> -> 1 `i `b ]
-"715
-[; ;newmain.c: 715:         RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"716
-[; ;newmain.c: 716:         RB3 = 1;
-[e = _RB3 -> -> 1 `i `b ]
-"717
-[; ;newmain.c: 717:         RB4 = 0;
-[e = _RB4 -> -> 0 `i `b ]
-"718
-[; ;newmain.c: 718:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
-"719
-[; ;newmain.c: 719:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"720
-[; ;newmain.c: 720:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"721
-[; ;newmain.c: 721:         break;
-[e $U 161  ]
-"723
-[; ;newmain.c: 723:         case 5:
+[; ;newmain.c: 713:         case 3:
 [e :U 168 ]
+"718
+[; ;newmain.c: 718:             RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"719
+[; ;newmain.c: 719:         RB1 = 1;
+[e = _RB1 -> -> 1 `i `b ]
+"720
+[; ;newmain.c: 720:         RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"721
+[; ;newmain.c: 721:         RB3 = 0;
+[e = _RB3 -> -> 0 `i `b ]
+"722
+[; ;newmain.c: 722:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"723
+[; ;newmain.c: 723:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
+"724
+[; ;newmain.c: 724:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"725
+[; ;newmain.c: 725:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"726
+[; ;newmain.c: 726:             break;
+[e $U 163  ]
 "728
-[; ;newmain.c: 728:         RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"729
-[; ;newmain.c: 729:         RB1 = 1;
-[e = _RB1 -> -> 1 `i `b ]
-"730
-[; ;newmain.c: 730:         RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"731
-[; ;newmain.c: 731:         RB3 = 1;
-[e = _RB3 -> -> 1 `i `b ]
-"732
-[; ;newmain.c: 732:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"733
-[; ;newmain.c: 733:         RB5 = 0;
-[e = _RB5 -> -> 0 `i `b ]
-"734
-[; ;newmain.c: 734:         RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"735
-[; ;newmain.c: 735:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"736
-[; ;newmain.c: 736:         break;
-[e $U 161  ]
-"738
-[; ;newmain.c: 738:         case 6:
+[; ;newmain.c: 728:         case 4:
 [e :U 169 ]
-"743
-[; ;newmain.c: 743:         RB0 = 1;
+"733
+[; ;newmain.c: 733:         RB0 = 1;
 [e = _RB0 -> -> 1 `i `b ]
-"744
-[; ;newmain.c: 744:         RB1 = 1;
+"734
+[; ;newmain.c: 734:         RB1 = 1;
 [e = _RB1 -> -> 1 `i `b ]
-"745
-[; ;newmain.c: 745:         RB2 = 1;
+"735
+[; ;newmain.c: 735:         RB2 = 1;
 [e = _RB2 -> -> 1 `i `b ]
-"746
-[; ;newmain.c: 746:         RB3 = 1;
+"736
+[; ;newmain.c: 736:         RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"747
-[; ;newmain.c: 747:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"748
-[; ;newmain.c: 748:         RB5 = 1;
+"737
+[; ;newmain.c: 737:         RB4 = 0;
+[e = _RB4 -> -> 0 `i `b ]
+"738
+[; ;newmain.c: 738:         RB5 = 1;
 [e = _RB5 -> -> 1 `i `b ]
-"749
-[; ;newmain.c: 749:         RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
-"750
-[; ;newmain.c: 750:         RC3 = 1;
-[e = _RC3 -> -> 1 `i `b ]
-"751
-[; ;newmain.c: 751:         break;
-[e $U 161  ]
-"753
-[; ;newmain.c: 753:         case 7:
-[e :U 170 ]
-"758
-[; ;newmain.c: 758:         RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"759
-[; ;newmain.c: 759:         RB1 = 1;
-[e = _RB1 -> -> 1 `i `b ]
-"760
-[; ;newmain.c: 760:         RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"761
-[; ;newmain.c: 761:         RB3 = 1;
-[e = _RB3 -> -> 1 `i `b ]
-"762
-[; ;newmain.c: 762:         RB4 = 1;
-[e = _RB4 -> -> 1 `i `b ]
-"763
-[; ;newmain.c: 763:         RB5 = 1;
-[e = _RB5 -> -> 1 `i `b ]
-"764
-[; ;newmain.c: 764:         RC0 = 1;
+"739
+[; ;newmain.c: 739:         RC0 = 1;
 [e = _RC0 -> -> 1 `i `b ]
+"740
+[; ;newmain.c: 740:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"741
+[; ;newmain.c: 741:         break;
+[e $U 163  ]
+"743
+[; ;newmain.c: 743:         case 5:
+[e :U 170 ]
+"748
+[; ;newmain.c: 748:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"749
+[; ;newmain.c: 749:         RB1 = 1;
+[e = _RB1 -> -> 1 `i `b ]
+"750
+[; ;newmain.c: 750:         RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"751
+[; ;newmain.c: 751:         RB3 = 1;
+[e = _RB3 -> -> 1 `i `b ]
+"752
+[; ;newmain.c: 752:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"753
+[; ;newmain.c: 753:         RB5 = 0;
+[e = _RB5 -> -> 0 `i `b ]
+"754
+[; ;newmain.c: 754:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"755
+[; ;newmain.c: 755:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
+"756
+[; ;newmain.c: 756:         break;
+[e $U 163  ]
+"758
+[; ;newmain.c: 758:         case 6:
+[e :U 171 ]
+"763
+[; ;newmain.c: 763:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"764
+[; ;newmain.c: 764:         RB1 = 1;
+[e = _RB1 -> -> 1 `i `b ]
 "765
-[; ;newmain.c: 765:         RC3 = 0;
-[e = _RC3 -> -> 0 `i `b ]
+[; ;newmain.c: 765:         RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
 "766
-[; ;newmain.c: 766:         break;
-[e $U 161  ]
+[; ;newmain.c: 766:         RB3 = 1;
+[e = _RB3 -> -> 1 `i `b ]
 "767
-[; ;newmain.c: 767:     }
-}
-[e $U 161  ]
-[e :U 162 ]
-[e [\ -> . _estado 2 `ui , $ -> -> 0 `i `ui 163
- , $ -> -> 1 `i `ui 164
- , $ -> -> 2 `i `ui 165
- , $ -> -> 3 `i `ui 166
- , $ -> -> 4 `i `ui 167
- , $ -> -> 5 `i `ui 168
- , $ -> -> 6 `i `ui 169
- , $ -> -> 7 `i `ui 170
- 161 ]
-[e :U 161 ]
+[; ;newmain.c: 767:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"768
+[; ;newmain.c: 768:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
+"769
+[; ;newmain.c: 769:         RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"770
+[; ;newmain.c: 770:         RC3 = 1;
+[e = _RC3 -> -> 1 `i `b ]
 "771
-[; ;newmain.c: 771: }
-[e :UE 160 ]
+[; ;newmain.c: 771:         break;
+[e $U 163  ]
+"773
+[; ;newmain.c: 773:         case 7:
+[e :U 172 ]
+"778
+[; ;newmain.c: 778:         RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
+"779
+[; ;newmain.c: 779:         RB1 = 1;
+[e = _RB1 -> -> 1 `i `b ]
+"780
+[; ;newmain.c: 780:         RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"781
+[; ;newmain.c: 781:         RB3 = 1;
+[e = _RB3 -> -> 1 `i `b ]
+"782
+[; ;newmain.c: 782:         RB4 = 1;
+[e = _RB4 -> -> 1 `i `b ]
+"783
+[; ;newmain.c: 783:         RB5 = 1;
+[e = _RB5 -> -> 1 `i `b ]
+"784
+[; ;newmain.c: 784:         RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"785
+[; ;newmain.c: 785:         RC3 = 0;
+[e = _RC3 -> -> 0 `i `b ]
+"786
+[; ;newmain.c: 786:         break;
+[e $U 163  ]
+"787
+[; ;newmain.c: 787:     }
 }
-"774
-[; ;newmain.c: 774: void leer_temperatura_presion(){
+[e $U 163  ]
+[e :U 164 ]
+[e [\ -> . _estado 2 `ui , $ -> -> 0 `i `ui 165
+ , $ -> -> 1 `i `ui 166
+ , $ -> -> 2 `i `ui 167
+ , $ -> -> 3 `i `ui 168
+ , $ -> -> 4 `i `ui 169
+ , $ -> -> 5 `i `ui 170
+ , $ -> -> 6 `i `ui 171
+ , $ -> -> 7 `i `ui 172
+ 163 ]
+[e :U 163 ]
+"791
+[; ;newmain.c: 791: }
+[e :UE 162 ]
+}
+"794
+[; ;newmain.c: 794: void leer_temperatura_presion(){
 [v _leer_temperatura_presion `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer_temperatura_presion ]
 [f ]
-"777
-[; ;newmain.c: 777:     if(lectura[INDICE_TEMPERATURA_PRESION] <= 105){
-[e $ ! <= -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 105 `i `ui 172  ]
+"797
+[; ;newmain.c: 797:     if(lectura[INDICE_TEMPERATURA_PRESION] <= 105){
+[e $ ! <= -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 105 `i `ui 174  ]
 {
-"778
-[; ;newmain.c: 778:         estado.temp_pre = TEYPRE_ERRORAMBAS;
-[e = . _estado 0 -> . `E711 2 `us ]
-"779
-[; ;newmain.c: 779:     }
-}
-[e :U 172 ]
-"780
-[; ;newmain.c: 780:     if(lectura[INDICE_TEMPERATURA_PRESION] > 105 && lectura[INDICE_TEMPERATURA_PRESION] <= 135){
-[e $ ! && > -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 105 `i `ui <= -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 135 `i `ui 173  ]
-{
-"781
-[; ;newmain.c: 781:         estado.temp_pre = TEYPRE_PREBAJA;
-[e = . _estado 0 -> . `E711 3 `us ]
-"782
-[; ;newmain.c: 782:     }
-}
-[e :U 173 ]
-"783
-[; ;newmain.c: 783:     if(lectura[INDICE_TEMPERATURA_PRESION] > 135 && lectura[INDICE_TEMPERATURA_PRESION] <= 190){
-[e $ ! && > -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 135 `i `ui <= -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 190 `i `ui 174  ]
-{
-"784
-[; ;newmain.c: 784:         estado.temp_pre =TEYPRE_TEMPALTA;
-[e = . _estado 0 -> . `E711 0 `us ]
-"785
-[; ;newmain.c: 785:     }
+"798
+[; ;newmain.c: 798:         estado.temp_pre = TEYPRE_ERRORAMBAS;
+[e = . _estado 0 -> . `E715 2 `us ]
+"799
+[; ;newmain.c: 799:     }
 }
 [e :U 174 ]
-"786
-[; ;newmain.c: 786:     if(lectura[INDICE_TEMPERATURA_PRESION] > 190 && lectura[INDICE_TEMPERATURA_PRESION] <= 255){
-[e $ ! && > -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 190 `i `ui <= -> *U + &U _lectura * -> . `E698 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 255 `i `ui 175  ]
+"800
+[; ;newmain.c: 800:     if(lectura[INDICE_TEMPERATURA_PRESION] > 105 && lectura[INDICE_TEMPERATURA_PRESION] <= 135){
+[e $ ! && > -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 105 `i `ui <= -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 135 `i `ui 175  ]
 {
-"787
-[; ;newmain.c: 787:         estado.temp_pre = TEYPRE_OK;
-[e = . _estado 0 -> . `E711 1 `us ]
-"788
-[; ;newmain.c: 788:     }
+"801
+[; ;newmain.c: 801:         estado.temp_pre = TEYPRE_PREBAJA;
+[e = . _estado 0 -> . `E715 3 `us ]
+"802
+[; ;newmain.c: 802:     }
 }
 [e :U 175 ]
-"794
-[; ;newmain.c: 794: }
-[e :UE 171 ]
+"803
+[; ;newmain.c: 803:     if(lectura[INDICE_TEMPERATURA_PRESION] > 135 && lectura[INDICE_TEMPERATURA_PRESION] <= 190){
+[e $ ! && > -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 135 `i `ui <= -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 190 `i `ui 176  ]
+{
+"804
+[; ;newmain.c: 804:         estado.temp_pre =TEYPRE_TEMPALTA;
+[e = . _estado 0 -> . `E715 0 `us ]
+"805
+[; ;newmain.c: 805:     }
 }
-"796
-[; ;newmain.c: 796: void accionar_temperatura_presion(){
+[e :U 176 ]
+"806
+[; ;newmain.c: 806:     if(lectura[INDICE_TEMPERATURA_PRESION] > 190 && lectura[INDICE_TEMPERATURA_PRESION] <= 255){
+[e $ ! && > -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 190 `i `ui <= -> *U + &U _lectura * -> . `E702 2 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 255 `i `ui 177  ]
+{
+"807
+[; ;newmain.c: 807:         estado.temp_pre = TEYPRE_OK;
+[e = . _estado 0 -> . `E715 1 `us ]
+"808
+[; ;newmain.c: 808:     }
+}
+[e :U 177 ]
+"814
+[; ;newmain.c: 814: }
+[e :UE 173 ]
+}
+"816
+[; ;newmain.c: 816: void accionar_temperatura_presion(){
 [v _accionar_temperatura_presion `(v ~T0 @X0 1 ef ]
 {
 [e :U _accionar_temperatura_presion ]
 [f ]
-"798
-[; ;newmain.c: 798:     switch(estado.temp_pre){
-[e $U 178  ]
+"818
+[; ;newmain.c: 818:     switch(estado.temp_pre){
+[e $U 180  ]
 {
-"799
-[; ;newmain.c: 799:         case TEYPRE_ERRORAMBAS:
-[e :U 179 ]
-"803
-[; ;newmain.c: 803:             apagar_grupo();
-[e ( _apagar_grupo ..  ]
-"806
-[; ;newmain.c: 806:             RB2 = 0;
-[e = _RB2 -> -> 0 `i `b ]
-"807
-[; ;newmain.c: 807:             RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
-"809
-[; ;newmain.c: 809:             break;
-[e $U 177  ]
-"810
-[; ;newmain.c: 810:         case TEYPRE_PREBAJA:
-[e :U 180 ]
-"814
-[; ;newmain.c: 814:             apagar_grupo();
-[e ( _apagar_grupo ..  ]
-"820
-[; ;newmain.c: 820:             RC0 = 0;
-[e = _RC0 -> -> 0 `i `b ]
-"821
-[; ;newmain.c: 821:             RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"826
-[; ;newmain.c: 826:             break;
-[e $U 177  ]
-"827
-[; ;newmain.c: 827:         case TEYPRE_TEMPALTA:
+"819
+[; ;newmain.c: 819:         case TEYPRE_ERRORAMBAS:
 [e :U 181 ]
-"831
-[; ;newmain.c: 831:             apagar_grupo();
+"823
+[; ;newmain.c: 823:             apagar_grupo();
 [e ( _apagar_grupo ..  ]
-"834
-[; ;newmain.c: 834:             RB2 = 1;
-[e = _RB2 -> -> 1 `i `b ]
-"835
-[; ;newmain.c: 835:             RC0 = 0;
+"826
+[; ;newmain.c: 826:             RB2 = 0;
+[e = _RB2 -> -> 0 `i `b ]
+"827
+[; ;newmain.c: 827:             RC0 = 0;
 [e = _RC0 -> -> 0 `i `b ]
-"837
-[; ;newmain.c: 837:             break;
-[e $U 177  ]
-"838
-[; ;newmain.c: 838:         case TEYPRE_OK:
+"829
+[; ;newmain.c: 829:             break;
+[e $U 179  ]
+"830
+[; ;newmain.c: 830:         case TEYPRE_PREBAJA:
 [e :U 182 ]
+"834
+[; ;newmain.c: 834:             apagar_grupo();
+[e ( _apagar_grupo ..  ]
+"840
+[; ;newmain.c: 840:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
 "841
 [; ;newmain.c: 841:             RB2 = 1;
 [e = _RB2 -> -> 1 `i `b ]
-"842
-[; ;newmain.c: 842:             RC0 = 1;
-[e = _RC0 -> -> 1 `i `b ]
-"844
-[; ;newmain.c: 844:             break;
-[e $U 177  ]
-"845
-[; ;newmain.c: 845:         default:
-[e :U 183 ]
 "846
 [; ;newmain.c: 846:             break;
-[e $U 177  ]
+[e $U 179  ]
 "847
-[; ;newmain.c: 847:     }
+[; ;newmain.c: 847:         case TEYPRE_TEMPALTA:
+[e :U 183 ]
+"851
+[; ;newmain.c: 851:             apagar_grupo();
+[e ( _apagar_grupo ..  ]
+"854
+[; ;newmain.c: 854:             RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"855
+[; ;newmain.c: 855:             RC0 = 0;
+[e = _RC0 -> -> 0 `i `b ]
+"857
+[; ;newmain.c: 857:             break;
+[e $U 179  ]
+"858
+[; ;newmain.c: 858:         case TEYPRE_OK:
+[e :U 184 ]
+"861
+[; ;newmain.c: 861:             RB2 = 1;
+[e = _RB2 -> -> 1 `i `b ]
+"862
+[; ;newmain.c: 862:             RC0 = 1;
+[e = _RC0 -> -> 1 `i `b ]
+"864
+[; ;newmain.c: 864:             break;
+[e $U 179  ]
+"865
+[; ;newmain.c: 865:         default:
+[e :U 185 ]
+"866
+[; ;newmain.c: 866:             break;
+[e $U 179  ]
+"867
+[; ;newmain.c: 867:     }
 }
-[e $U 177  ]
-[e :U 178 ]
-[e [\ -> . _estado 0 `ui , $ -> . `E711 2 `ui 179
- , $ -> . `E711 3 `ui 180
- , $ -> . `E711 0 `ui 181
- , $ -> . `E711 1 `ui 182
- 183 ]
-[e :U 177 ]
-"852
-[; ;newmain.c: 852: }
-[e :UE 176 ]
+[e $U 179  ]
+[e :U 180 ]
+[e [\ -> . _estado 0 `ui , $ -> . `E715 2 `ui 181
+ , $ -> . `E715 3 `ui 182
+ , $ -> . `E715 0 `ui 183
+ , $ -> . `E715 1 `ui 184
+ 185 ]
+[e :U 179 ]
+"872
+[; ;newmain.c: 872: }
+[e :UE 178 ]
 }
-"859
-[; ;newmain.c: 859: void leer_tension_linea(){
+"879
+[; ;newmain.c: 879: void leer_tension_linea(){
 [v _leer_tension_linea `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer_tension_linea ]
 [f ]
-"861
-[; ;newmain.c: 861:     unsigned short int no_iniciar = 4000 / 1000;
+"881
+[; ;newmain.c: 881:     unsigned short int no_iniciar = 4000 / 1000;
 [v _no_iniciar `us ~T0 @X0 1 a ]
 [e = _no_iniciar -> / -> 4000 `i -> 1000 `i `us ]
-"862
-[; ;newmain.c: 862:     unsigned short int verificar_red = 45000 / 1000;
+"882
+[; ;newmain.c: 882:     unsigned short int verificar_red = 45000 / 1000;
 [v _verificar_red `us ~T0 @X0 1 a ]
 [e = _verificar_red -> / -> 45000 `l -> -> 1000 `i `l `us ]
-"864
-[; ;newmain.c: 864:     if(lectura[INDICE_TENSION_LINEA] >= 113){
-[e $ ! >= -> *U + &U _lectura * -> . `E698 3 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 185  ]
-{
-"867
-[; ;newmain.c: 867:         if(estado.tension_linea == GRUPO_EN_USO){
-[e $ ! == -> . _estado 3 `ui -> . `E732 2 `ui 186  ]
-{
-"869
-[; ;newmain.c: 869:             flag_inicio_red = flag_inicio_red + 1;
-[e = _flag_inicio_red -> + -> _flag_inicio_red `ui -> -> 1 `i `ui `us ]
-"871
-[; ;newmain.c: 871:             if(flag_inicio_red > verificar_red){
-[e $ ! > -> _flag_inicio_red `ui -> _verificar_red `ui 187  ]
-{
-"872
-[; ;newmain.c: 872:                 estado.tension_linea = TRANSFERENCIA_RED;
-[e = . _estado 3 -> . `E732 3 `us ]
-"873
-[; ;newmain.c: 873:                 flag_inicio_red = 0;
-[e = _flag_inicio_red -> -> 0 `i `us ]
-"874
-[; ;newmain.c: 874:                 return;
-[e $UE 184  ]
-"875
-[; ;newmain.c: 875:             }
-}
-[e :U 187 ]
-"877
-[; ;newmain.c: 877:             return;
-[e $UE 184  ]
-"879
-[; ;newmain.c: 879:         }
-}
-[e :U 186 ]
-"883
-[; ;newmain.c: 883:         estado.tension_linea = RED_TENSION;
-[e = . _estado 3 -> . `E732 0 `us ]
 "884
-[; ;newmain.c: 884:         flag_inicio_grupo = 0;
-[e = _flag_inicio_grupo -> -> 0 `i `us ]
-"888
-[; ;newmain.c: 888:     }
-}
-[e $U 188  ]
+[; ;newmain.c: 884:     if(lectura[INDICE_TENSION_LINEA] >= 113){
+[e $ ! >= -> *U + &U _lectura * -> . `E702 3 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 187  ]
+{
+"887
+[; ;newmain.c: 887:         if(estado.tension_linea == GRUPO_EN_USO){
+[e $ ! == -> . _estado 3 `ui -> . `E736 2 `ui 188  ]
+{
 "889
-[; ;newmain.c: 889:     else{
-[e :U 185 ]
+[; ;newmain.c: 889:             flag_inicio_red = flag_inicio_red + 1;
+[e = _flag_inicio_red -> + -> _flag_inicio_red `ui -> -> 1 `i `ui `us ]
+"891
+[; ;newmain.c: 891:             if(flag_inicio_red > verificar_red){
+[e $ ! > -> _flag_inicio_red `ui -> _verificar_red `ui 189  ]
 {
 "892
-[; ;newmain.c: 892:         if(estado.tension_linea == GRUPO_EN_USO){
-[e $ ! == -> . _estado 3 `ui -> . `E732 2 `ui 189  ]
-{
+[; ;newmain.c: 892:                 estado.tension_linea = TRANSFERENCIA_RED;
+[e = . _estado 3 -> . `E736 3 `us ]
 "893
-[; ;newmain.c: 893:             flag_inicio_red = 0;
+[; ;newmain.c: 893:                 flag_inicio_red = 0;
 [e = _flag_inicio_red -> -> 0 `i `us ]
 "894
-[; ;newmain.c: 894:             return;
-[e $UE 184  ]
+[; ;newmain.c: 894:                 return;
+[e $UE 186  ]
 "895
-[; ;newmain.c: 895:         }
+[; ;newmain.c: 895:             }
 }
 [e :U 189 ]
 "897
-[; ;newmain.c: 897:         flag_inicio_grupo = flag_inicio_grupo + 1;
-[e = _flag_inicio_grupo -> + -> _flag_inicio_grupo `ui -> -> 1 `i `ui `us ]
+[; ;newmain.c: 897:             return;
+[e $UE 186  ]
 "899
-[; ;newmain.c: 899:         if(flag_inicio_grupo > no_iniciar && flag_hubo_falla == 0){
-[e $ ! && > -> _flag_inicio_grupo `ui -> _no_iniciar `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 190  ]
-{
-"900
-[; ;newmain.c: 900:             estado.tension_linea = TRANSFERENCIA_GRUPO;
-[e = . _estado 3 -> . `E732 1 `us ]
-"901
-[; ;newmain.c: 901:             flag_inicio_grupo = 0;
-[e = _flag_inicio_grupo -> -> 0 `i `us ]
-"902
-[; ;newmain.c: 902:             return;
-[e $UE 184  ]
-"903
-[; ;newmain.c: 903:         }
-}
-[e :U 190 ]
-"905
-[; ;newmain.c: 905:     }
+[; ;newmain.c: 899:         }
 }
 [e :U 188 ]
-"911
-[; ;newmain.c: 911: }
-[e :UE 184 ]
+"903
+[; ;newmain.c: 903:         estado.tension_linea = RED_TENSION;
+[e = . _estado 3 -> . `E736 0 `us ]
+"904
+[; ;newmain.c: 904:         flag_inicio_grupo = 0;
+[e = _flag_inicio_grupo -> -> 0 `i `us ]
+"908
+[; ;newmain.c: 908:     }
 }
-"916
-[; ;newmain.c: 916: void leer_tension_grupo(){
+[e $U 190  ]
+"909
+[; ;newmain.c: 909:     else{
+[e :U 187 ]
+{
+"912
+[; ;newmain.c: 912:         if(estado.tension_linea == GRUPO_EN_USO){
+[e $ ! == -> . _estado 3 `ui -> . `E736 2 `ui 191  ]
+{
+"913
+[; ;newmain.c: 913:             flag_inicio_red = 0;
+[e = _flag_inicio_red -> -> 0 `i `us ]
+"914
+[; ;newmain.c: 914:             return;
+[e $UE 186  ]
+"915
+[; ;newmain.c: 915:         }
+}
+[e :U 191 ]
+"917
+[; ;newmain.c: 917:         flag_inicio_grupo = flag_inicio_grupo + 1;
+[e = _flag_inicio_grupo -> + -> _flag_inicio_grupo `ui -> -> 1 `i `ui `us ]
+"919
+[; ;newmain.c: 919:         if(flag_inicio_grupo > no_iniciar && flag_hubo_falla == 0){
+[e $ ! && > -> _flag_inicio_grupo `ui -> _no_iniciar `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 192  ]
+{
+"920
+[; ;newmain.c: 920:             estado.tension_linea = TRANSFERENCIA_GRUPO;
+[e = . _estado 3 -> . `E736 1 `us ]
+"921
+[; ;newmain.c: 921:             flag_inicio_grupo = 0;
+[e = _flag_inicio_grupo -> -> 0 `i `us ]
+"922
+[; ;newmain.c: 922:             return;
+[e $UE 186  ]
+"923
+[; ;newmain.c: 923:         }
+}
+[e :U 192 ]
+"925
+[; ;newmain.c: 925:     }
+}
+[e :U 190 ]
+"931
+[; ;newmain.c: 931: }
+[e :UE 186 ]
+}
+"936
+[; ;newmain.c: 936: void leer_tension_grupo(){
 [v _leer_tension_grupo `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer_tension_grupo ]
 [f ]
-"919
-[; ;newmain.c: 919:     if(lectura[INDICE_TENSION_DE_GRUPO] >= 113){
-[e $ ! >= -> *U + &U _lectura * -> . `E698 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 192  ]
+"939
+[; ;newmain.c: 939:     if(lectura[INDICE_TENSION_DE_GRUPO] >= 113){
+[e $ ! >= -> *U + &U _lectura * -> . `E702 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 194  ]
 {
-"920
-[; ;newmain.c: 920:         estado.tension_grupo = V_GRUP_OK;
-[e = . _estado 4 -> . `E728 0 `us ]
-"921
-[; ;newmain.c: 921:     }
-}
-[e :U 192 ]
-"924
-[; ;newmain.c: 924:     if(lectura[INDICE_TENSION_DE_GRUPO] >= 50 && lectura[INDICE_TENSION_DE_GRUPO] < 113){
-[e $ ! && >= -> *U + &U _lectura * -> . `E698 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui < -> *U + &U _lectura * -> . `E698 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 193  ]
-{
-"925
-[; ;newmain.c: 925:         estado.tension_grupo = V_GRUP_ERROR;
-[e = . _estado 4 -> . `E728 1 `us ]
-"926
-[; ;newmain.c: 926:     }
-}
-[e :U 193 ]
-"929
-[; ;newmain.c: 929:     if(lectura[INDICE_TENSION_DE_GRUPO] < 50){
-[e $ ! < -> *U + &U _lectura * -> . `E698 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui 194  ]
-{
-"930
-[; ;newmain.c: 930:         estado.tension_grupo = V_GRUP_SIN_TENSION;
-[e = . _estado 4 -> . `E728 2 `us ]
-"931
-[; ;newmain.c: 931:     }
+"940
+[; ;newmain.c: 940:         estado.tension_grupo = V_GRUP_OK;
+[e = . _estado 4 -> . `E732 0 `us ]
+"941
+[; ;newmain.c: 941:     }
 }
 [e :U 194 ]
-"935
-[; ;newmain.c: 935: }
-[e :UE 191 ]
+"944
+[; ;newmain.c: 944:     if(lectura[INDICE_TENSION_DE_GRUPO] >= 50 && lectura[INDICE_TENSION_DE_GRUPO] < 113){
+[e $ ! && >= -> *U + &U _lectura * -> . `E702 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui < -> *U + &U _lectura * -> . `E702 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 113 `i `ui 195  ]
+{
+"945
+[; ;newmain.c: 945:         estado.tension_grupo = V_GRUP_ERROR;
+[e = . _estado 4 -> . `E732 1 `us ]
+"946
+[; ;newmain.c: 946:     }
 }
-"936
-[; ;newmain.c: 936: void accionar_tension_grupo(){
+[e :U 195 ]
+"949
+[; ;newmain.c: 949:     if(lectura[INDICE_TENSION_DE_GRUPO] < 50){
+[e $ ! < -> *U + &U _lectura * -> . `E702 4 `ux -> -> # *U &U _lectura `ui `ux `ui -> -> 50 `i `ui 196  ]
+{
+"950
+[; ;newmain.c: 950:         estado.tension_grupo = V_GRUP_SIN_TENSION;
+[e = . _estado 4 -> . `E732 2 `us ]
+"951
+[; ;newmain.c: 951:     }
+}
+[e :U 196 ]
+"955
+[; ;newmain.c: 955: }
+[e :UE 193 ]
+}
+"956
+[; ;newmain.c: 956: void accionar_tension_grupo(){
 [v _accionar_tension_grupo `(v ~T0 @X0 1 ef ]
 {
 [e :U _accionar_tension_grupo ]
 [f ]
-"937
-[; ;newmain.c: 937:     switch(estado.tension_grupo){
-[e $U 197  ]
+"957
+[; ;newmain.c: 957:     switch(estado.tension_grupo){
+[e $U 199  ]
 {
-"938
-[; ;newmain.c: 938:         case V_GRUP_OK:
-[e :U 198 ]
-"940
-[; ;newmain.c: 940:             RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"941
-[; ;newmain.c: 941:             flag_equipo_en_marcha = 1;
-[e = _flag_equipo_en_marcha -> -> 1 `i `us ]
-"942
-[; ;newmain.c: 942:             reintentar_arranque = 0;
-[e = _reintentar_arranque -> -> 0 `i `us ]
-"944
-[; ;newmain.c: 944:             break;
-[e $U 196  ]
-"946
-[; ;newmain.c: 946:         case V_GRUP_ERROR:
-[e :U 199 ]
-"950
-[; ;newmain.c: 950:             apagar_grupo();
-[e ( _apagar_grupo ..  ]
-"951
-[; ;newmain.c: 951:             RB0 = 0;
-[e = _RB0 -> -> 0 `i `b ]
-"952
-[; ;newmain.c: 952:             break;
-[e $U 196  ]
-"954
-[; ;newmain.c: 954:         case V_GRUP_SIN_TENSION:
-[e :U 200 ]
-"956
-[; ;newmain.c: 956:             reintentar_arranque++;
-[e ++ _reintentar_arranque -> -> 1 `i `us ]
 "958
-[; ;newmain.c: 958:             if(reintentar_arranque == 60){
-[e $ ! == -> _reintentar_arranque `ui -> -> 60 `i `ui 201  ]
-{
-"959
-[; ;newmain.c: 959:               desactivar_uso_de_red();
-[e ( _desactivar_uso_de_red ..  ]
+[; ;newmain.c: 958:         case V_GRUP_OK:
+[e :U 200 ]
 "960
-[; ;newmain.c: 960:               apagar_led_red_disponible();
-[e ( _apagar_led_red_disponible ..  ]
+[; ;newmain.c: 960:             RB0 = 1;
+[e = _RB0 -> -> 1 `i `b ]
 "961
-[; ;newmain.c: 961:               encender_alarma();
-[e ( _encender_alarma ..  ]
+[; ;newmain.c: 961:             flag_equipo_en_marcha = 1;
+[e = _flag_equipo_en_marcha -> -> 1 `i `us ]
 "962
-[; ;newmain.c: 962:               activarCombustible();
-[e ( _activarCombustible ..  ]
-"963
-[; ;newmain.c: 963:               activarPrecalentamiento();
-[e ( _activarPrecalentamiento ..  ]
+[; ;newmain.c: 962:             reintentar_arranque = 0;
+[e = _reintentar_arranque -> -> 0 `i `us ]
 "964
-[; ;newmain.c: 964:               activarArranque();
-[e ( _activarArranque ..  ]
-"965
-[; ;newmain.c: 965:               encenderTransferencia();
-[e ( _encenderTransferencia ..  ]
+[; ;newmain.c: 964:             break;
+[e $U 198  ]
 "966
-[; ;newmain.c: 966:               grupo_disponible();
-[e ( _grupo_disponible ..  ]
-"967
-[; ;newmain.c: 967:               grupo_en_uso();
-[e ( _grupo_en_uso ..  ]
-"968
-[; ;newmain.c: 968:               funcion_minima();
-[e ( _funcion_minima ..  ]
-"970
-[; ;newmain.c: 970:             }
-}
+[; ;newmain.c: 966:         case V_GRUP_ERROR:
 [e :U 201 ]
-"972
-[; ;newmain.c: 972:             if(reintentar_arranque == 120){
-[e $ ! == -> _reintentar_arranque `ui -> -> 120 `i `ui 202  ]
+"970
+[; ;newmain.c: 970:             if(flag_hubo_falla != 0){
+[e $ ! != -> _flag_hubo_falla `ui -> -> 0 `i `ui 202  ]
 {
+"971
+[; ;newmain.c: 971:             apagar_grupo();
+[e ( _apagar_grupo ..  ]
+"972
+[; ;newmain.c: 972:             RB0 = 0;
+[e = _RB0 -> -> 0 `i `b ]
 "973
-[; ;newmain.c: 973:               desactivar_uso_de_red();
-[e ( _desactivar_uso_de_red ..  ]
-"974
-[; ;newmain.c: 974:               apagar_led_red_disponible();
-[e ( _apagar_led_red_disponible ..  ]
+[; ;newmain.c: 973:             break;
+[e $U 198  ]
 "975
-[; ;newmain.c: 975:               encender_alarma();
-[e ( _encender_alarma ..  ]
-"976
-[; ;newmain.c: 976:               activarCombustible();
-[e ( _activarCombustible ..  ]
-"977
-[; ;newmain.c: 977:               activarPrecalentamiento();
-[e ( _activarPrecalentamiento ..  ]
-"978
-[; ;newmain.c: 978:               activarArranque();
-[e ( _activarArranque ..  ]
-"979
-[; ;newmain.c: 979:               encenderTransferencia();
-[e ( _encenderTransferencia ..  ]
-"980
-[; ;newmain.c: 980:               grupo_disponible();
-[e ( _grupo_disponible ..  ]
-"981
-[; ;newmain.c: 981:               grupo_en_uso();
-[e ( _grupo_en_uso ..  ]
-"982
-[; ;newmain.c: 982:               funcion_minima();
-[e ( _funcion_minima ..  ]
-"983
-[; ;newmain.c: 983:             }
+[; ;newmain.c: 975:             }
 }
 [e :U 202 ]
-"985
-[; ;newmain.c: 985:             if(reintentar_arranque >= 121){
-[e $ ! >= -> _reintentar_arranque `ui -> -> 121 `i `ui 203  ]
+"978
+[; ;newmain.c: 978:         case V_GRUP_SIN_TENSION:
+[e :U 203 ]
+"980
+[; ;newmain.c: 980:             if(reintentar_arranque == 2){
+[e $ ! == -> _reintentar_arranque `ui -> -> 2 `i `ui 204  ]
 {
+"981
+[; ;newmain.c: 981:                 apagar_grupo();
+[e ( _apagar_grupo ..  ]
+"983
+[; ;newmain.c: 983:                 RC3 = 0;
+[e = _RC3 -> -> 0 `i `b ]
+"984
+[; ;newmain.c: 984:                 break;
+[e $U 198  ]
+"985
+[; ;newmain.c: 985:             }
+}
+[e :U 204 ]
 "987
-[; ;newmain.c: 987:                 apagar_grupo();
+[; ;newmain.c: 987:             if(flag_hubo_falla != 0){
+[e $ ! != -> _flag_hubo_falla `ui -> -> 0 `i `ui 205  ]
+{
+"988
+[; ;newmain.c: 988:                 apagar_grupo();
 [e ( _apagar_grupo ..  ]
 "989
 [; ;newmain.c: 989:                 RC3 = 0;
 [e = _RC3 -> -> 0 `i `b ]
+"990
+[; ;newmain.c: 990:                 break;
+[e $U 198  ]
 "991
 [; ;newmain.c: 991:             }
 }
-[e :U 203 ]
-"994
-[; ;newmain.c: 994:             break;
-[e $U 196  ]
+[e :U 205 ]
+"993
+[; ;newmain.c: 993:             break;
+[e $U 198  ]
+"995
+[; ;newmain.c: 995:     }
+}
+[e $U 198  ]
+[e :U 199 ]
+[e [\ -> . _estado 4 `ui , $ -> . `E732 0 `ui 200
+ , $ -> . `E732 1 `ui 201
+ , $ -> . `E732 2 `ui 203
+ 198 ]
+[e :U 198 ]
 "996
-[; ;newmain.c: 996:     }
+[; ;newmain.c: 996: }
+[e :UE 197 ]
 }
-[e $U 196  ]
-[e :U 197 ]
-[e [\ -> . _estado 4 `ui , $ -> . `E728 0 `ui 198
- , $ -> . `E728 1 `ui 199
- , $ -> . `E728 2 `ui 200
- 196 ]
-[e :U 196 ]
+"998
+[; ;newmain.c: 998: void reintentar_inicio(){
+[v _reintentar_inicio `(v ~T0 @X0 1 ef ]
+{
+[e :U _reintentar_inicio ]
+[f ]
 "999
-[; ;newmain.c: 999: }
-[e :UE 195 ]
+[; ;newmain.c: 999:     desactivarEquipo();
+[e ( _desactivarEquipo ..  ]
+"1000
+[; ;newmain.c: 1000:     reintentar_arranque++;
+[e ++ _reintentar_arranque -> -> 1 `i `us ]
+"1001
+[; ;newmain.c: 1001:     iniciar_equipo();
+[e ( _iniciar_equipo ..  ]
+"1003
+[; ;newmain.c: 1003:     if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+[e $ ! && != -> . _estado 4 `ui -> . `E732 0 `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 207  ]
+{
+"1004
+[; ;newmain.c: 1004:         desactivarEquipo();
+[e ( _desactivarEquipo ..  ]
+"1005
+[; ;newmain.c: 1005:         iniciar_equipo();
+[e ( _iniciar_equipo ..  ]
+"1006
+[; ;newmain.c: 1006:         reintentar_arranque++;
+[e ++ _reintentar_arranque -> -> 1 `i `us ]
+"1007
+[; ;newmain.c: 1007:         if((estado.tension_grupo != V_GRUP_OK) && (flag_hubo_falla == 0)){
+[e $ ! && != -> . _estado 4 `ui -> . `E732 0 `ui == -> _flag_hubo_falla `ui -> -> 0 `i `ui 208  ]
+{
+"1008
+[; ;newmain.c: 1008:             accionar_tension_grupo();
+[e ( _accionar_tension_grupo ..  ]
+"1009
+[; ;newmain.c: 1009:         }
 }
-"1002
-[; ;newmain.c: 1002: void configuracion_inicial(){
+[e :U 208 ]
+"1011
+[; ;newmain.c: 1011:      }
+}
+[e :U 207 ]
+"1014
+[; ;newmain.c: 1014:     estado.tension_linea = GRUPO_EN_USO;
+[e = . _estado 3 -> . `E736 2 `us ]
+"1016
+[; ;newmain.c: 1016: }
+[e :UE 206 ]
+}
+"1018
+[; ;newmain.c: 1018: void iniciar_equipo(){
+[v _iniciar_equipo `(v ~T0 @X0 1 ef ]
+{
+[e :U _iniciar_equipo ]
+[f ]
+"1019
+[; ;newmain.c: 1019:     desactivar_uso_de_red();
+[e ( _desactivar_uso_de_red ..  ]
+"1020
+[; ;newmain.c: 1020:     apagar_led_red_disponible();
+[e ( _apagar_led_red_disponible ..  ]
+"1021
+[; ;newmain.c: 1021:     activarCombustible();
+[e ( _activarCombustible ..  ]
+"1022
+[; ;newmain.c: 1022:     activarPrecalentamiento();
+[e ( _activarPrecalentamiento ..  ]
+"1023
+[; ;newmain.c: 1023:     activarArranque();
+[e ( _activarArranque ..  ]
+"1024
+[; ;newmain.c: 1024:     encenderTransferencia();
+[e ( _encenderTransferencia ..  ]
+"1025
+[; ;newmain.c: 1025:     grupo_disponible();
+[e ( _grupo_disponible ..  ]
+"1026
+[; ;newmain.c: 1026:     grupo_en_uso();
+[e ( _grupo_en_uso ..  ]
+"1027
+[; ;newmain.c: 1027:     funcion_minima();
+[e ( _funcion_minima ..  ]
+"1028
+[; ;newmain.c: 1028:     leer_canales();
+[e ( _leer_canales ..  ]
+"1029
+[; ;newmain.c: 1029:     leer_tension_grupo();
+[e ( _leer_tension_grupo ..  ]
+"1030
+[; ;newmain.c: 1030:     accionar_tension_grupo();
+[e ( _accionar_tension_grupo ..  ]
+"1032
+[; ;newmain.c: 1032: }
+[e :UE 209 ]
+}
+"1035
+[; ;newmain.c: 1035: void desactivarEquipo(){
+[v _desactivarEquipo `(v ~T0 @X0 1 ef ]
+{
+[e :U _desactivarEquipo ]
+[f ]
+"1036
+[; ;newmain.c: 1036:     apagar_grupo_en_uso();
+[e ( _apagar_grupo_en_uso ..  ]
+"1037
+[; ;newmain.c: 1037:     apagar_grupo_disponible();
+[e ( _apagar_grupo_disponible ..  ]
+"1038
+[; ;newmain.c: 1038:     desactivar_combustible();
+[e ( _desactivar_combustible ..  ]
+"1039
+[; ;newmain.c: 1039:     _delay((unsigned long)((20000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"1040
+[; ;newmain.c: 1040:     _delay((unsigned long)((10000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"1042
+[; ;newmain.c: 1042: }
+[e :UE 210 ]
+}
+"1044
+[; ;newmain.c: 1044: void desactivarTensionGrupo(){
+[v _desactivarTensionGrupo `(v ~T0 @X0 1 ef ]
+{
+[e :U _desactivarTensionGrupo ]
+[f ]
+"1045
+[; ;newmain.c: 1045:     apagar_grupo_en_uso();
+[e ( _apagar_grupo_en_uso ..  ]
+"1046
+[; ;newmain.c: 1046:     apagar_grupo_disponible();
+[e ( _apagar_grupo_disponible ..  ]
+"1047
+[; ;newmain.c: 1047:     desactivar_combustible();
+[e ( _desactivar_combustible ..  ]
+"1048
+[; ;newmain.c: 1048:     encender_alarma();
+[e ( _encender_alarma ..  ]
+"1049
+[; ;newmain.c: 1049: }
+[e :UE 211 ]
+}
+"1052
+[; ;newmain.c: 1052: void configuracion_inicial(){
 [v _configuracion_inicial `(v ~T0 @X0 1 ef ]
 {
 [e :U _configuracion_inicial ]
 [f ]
-"1003
-[; ;newmain.c: 1003:     RC0 = 1;
+"1053
+[; ;newmain.c: 1053:     RC0 = 1;
 [e = _RC0 -> -> 1 `i `b ]
-"1004
-[; ;newmain.c: 1004:     RC1 = 0;
+"1054
+[; ;newmain.c: 1054:     RC1 = 0;
 [e = _RC1 -> -> 0 `i `b ]
-"1005
-[; ;newmain.c: 1005:     RC2 = 0;
+"1055
+[; ;newmain.c: 1055:     RC2 = 0;
 [e = _RC2 -> -> 0 `i `b ]
-"1006
-[; ;newmain.c: 1006:     RC3 = 1;
+"1056
+[; ;newmain.c: 1056:     RC3 = 1;
 [e = _RC3 -> -> 1 `i `b ]
-"1007
-[; ;newmain.c: 1007:     RC4 = 1;
+"1057
+[; ;newmain.c: 1057:     RC4 = 1;
 [e = _RC4 -> -> 1 `i `b ]
-"1008
-[; ;newmain.c: 1008:     RC5 = 0;
+"1058
+[; ;newmain.c: 1058:     RC5 = 0;
 [e = _RC5 -> -> 0 `i `b ]
-"1009
-[; ;newmain.c: 1009:     RC6 = 0;
+"1059
+[; ;newmain.c: 1059:     RC6 = 0;
 [e = _RC6 -> -> 0 `i `b ]
-"1010
-[; ;newmain.c: 1010:     RC7 = 0;
+"1060
+[; ;newmain.c: 1060:     RC7 = 0;
 [e = _RC7 -> -> 0 `i `b ]
-"1012
-[; ;newmain.c: 1012:     RB0 = 1;
+"1062
+[; ;newmain.c: 1062:     RB0 = 1;
 [e = _RB0 -> -> 1 `i `b ]
-"1013
-[; ;newmain.c: 1013:     RB1 = 1;
+"1063
+[; ;newmain.c: 1063:     RB1 = 1;
 [e = _RB1 -> -> 1 `i `b ]
-"1014
-[; ;newmain.c: 1014:     RB2 = 1;
+"1064
+[; ;newmain.c: 1064:     RB2 = 1;
 [e = _RB2 -> -> 1 `i `b ]
-"1015
-[; ;newmain.c: 1015:     RB3 = 1;
+"1065
+[; ;newmain.c: 1065:     RB3 = 1;
 [e = _RB3 -> -> 1 `i `b ]
-"1016
-[; ;newmain.c: 1016:     RB4 = 1;
+"1066
+[; ;newmain.c: 1066:     RB4 = 1;
 [e = _RB4 -> -> 1 `i `b ]
-"1017
-[; ;newmain.c: 1017:     RB5 = 1;
+"1067
+[; ;newmain.c: 1067:     RB5 = 1;
 [e = _RB5 -> -> 1 `i `b ]
-"1018
-[; ;newmain.c: 1018:     RB6 = 0;
+"1068
+[; ;newmain.c: 1068:     RB6 = 0;
 [e = _RB6 -> -> 0 `i `b ]
-"1019
-[; ;newmain.c: 1019:     flag_hubo_falla = 0;
+"1069
+[; ;newmain.c: 1069:     flag_hubo_falla = 0;
 [e = _flag_hubo_falla -> -> 0 `i `us ]
-"1020
-[; ;newmain.c: 1020:     flag_inicio_grupo = 0;
+"1070
+[; ;newmain.c: 1070:     flag_inicio_grupo = 0;
 [e = _flag_inicio_grupo -> -> 0 `i `us ]
-"1021
-[; ;newmain.c: 1021:     flag_parpadeo_automatico = 0;
+"1071
+[; ;newmain.c: 1071:     flag_parpadeo_automatico = 0;
 [e = _flag_parpadeo_automatico -> -> 0 `i `us ]
-"1022
-[; ;newmain.c: 1022:     flag_inicio_red = 0;
+"1072
+[; ;newmain.c: 1072:     flag_inicio_red = 0;
 [e = _flag_inicio_red -> -> 0 `i `us ]
-"1023
-[; ;newmain.c: 1023:     led_manual = 0;
+"1073
+[; ;newmain.c: 1073:     led_manual = 0;
 [e = _led_manual -> -> 0 `i `ui ]
-"1024
-[; ;newmain.c: 1024:     flag_equipo_en_marcha = 0;
+"1074
+[; ;newmain.c: 1074:     flag_equipo_en_marcha = 0;
 [e = _flag_equipo_en_marcha -> -> 0 `i `us ]
-"1025
-[; ;newmain.c: 1025:     reintentar_arranque = 0;
+"1075
+[; ;newmain.c: 1075:     reintentar_arranque = 0;
 [e = _reintentar_arranque -> -> 0 `i `us ]
-"1026
-[; ;newmain.c: 1026:     estado.tension_grupo = RED_TENSION;
-[e = . _estado 4 -> . `E732 0 `us ]
-"1028
-[; ;newmain.c: 1028: }
-[e :UE 204 ]
+"1076
+[; ;newmain.c: 1076:     estado.tension_grupo = RED_TENSION;
+[e = . _estado 4 -> . `E736 0 `us ]
+"1078
+[; ;newmain.c: 1078: }
+[e :UE 212 ]
 }
